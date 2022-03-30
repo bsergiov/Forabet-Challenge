@@ -56,15 +56,63 @@
 		CCD0ED6127F447C400E57F21 /* Forabet Challenge */ = {
 			isa = PBXGroup;
 			children = (
-				CCD0ED6227F447C400E57F21 /* AppDelegate.swift */,
-				CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */,
-				CCD0ED6627F447C400E57F21 /* ViewController.swift */,
-				CCD0ED6827F447C400E57F21 /* Main.storyboard */,
-				CCD0ED6B27F447C600E57F21 /* Assets.xcassets */,
-				CCD0ED6D27F447C600E57F21 /* LaunchScreen.storyboard */,
-				CCD0ED7027F447C600E57F21 /* Info.plist */,
+				CCD0ED7B27F4489B00E57F21 /* Services */,
+				CCD0ED7A27F4488F00E57F21 /* Models */,
+				CCD0ED7627F4484E00E57F21 /* SupportFiles */,
+				CCD0ED7827F4487700E57F21 /* Controllers */,
+				CCD0ED7727F4486A00E57F21 /* Storyboards */,
+				CCD0ED7927F4488100E57F21 /* Resources */,
 			);
 			path = "Forabet Challenge";
+			sourceTree = "<group>";
+		};
+		CCD0ED7627F4484E00E57F21 /* SupportFiles */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0ED6227F447C400E57F21 /* AppDelegate.swift */,
+				CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */,
+				CCD0ED7027F447C600E57F21 /* Info.plist */,
+			);
+			path = SupportFiles;
+			sourceTree = "<group>";
+		};
+		CCD0ED7727F4486A00E57F21 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0ED6827F447C400E57F21 /* Main.storyboard */,
+				CCD0ED6D27F447C600E57F21 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
+		CCD0ED7827F4487700E57F21 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0ED6627F447C400E57F21 /* ViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		CCD0ED7927F4488100E57F21 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				CCD0ED6B27F447C600E57F21 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		CCD0ED7A27F4488F00E57F21 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CCD0ED7B27F4489B00E57F21 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,12 +336,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Forabet Challenge/Info.plist";
+				INFOPLIST_FILE = "Forabet Challenge/SupportFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -303,7 +352,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -315,12 +364,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
-				INFOPLIST_FILE = "Forabet Challenge/Info.plist";
+				INFOPLIST_FILE = "Forabet Challenge/SupportFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -330,7 +380,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
