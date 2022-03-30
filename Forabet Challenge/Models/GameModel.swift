@@ -8,5 +8,5 @@
 import Foundation
 
 struct GameModel {
-    
+    let name: String
 }
