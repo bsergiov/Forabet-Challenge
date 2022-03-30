@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC25A35C27F4A1A400FDA30B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A35B27F4A1A400FDA30B /* HomeTableViewCell.swift */; };
 		CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6227F447C400E57F21 /* AppDelegate.swift */; };
 		CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */; };
-		CCD0ED6727F447C400E57F21 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6627F447C400E57F21 /* ViewController.swift */; };
+		CCD0ED6727F447C400E57F21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6627F447C400E57F21 /* HomeViewController.swift */; };
 		CCD0ED6A27F447C400E57F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD0ED6827F447C400E57F21 /* Main.storyboard */; };
 		CCD0ED6C27F447C600E57F21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CCD0ED6B27F447C600E57F21 /* Assets.xcassets */; };
 		CCD0ED6F27F447C600E57F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD0ED6D27F447C600E57F21 /* LaunchScreen.storyboard */; };
@@ -18,10 +19,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CC25A35B27F4A1A400FDA30B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forabet Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD0ED6227F447C400E57F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		CCD0ED6627F447C400E57F21 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		CCD0ED6627F447C400E57F21 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		CCD0ED6927F447C400E57F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		CCD0ED6B27F447C600E57F21 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CCD0ED6E27F447C600E57F21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC25A35A27F4A17200FDA30B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				CC25A35B27F4A1A400FDA30B /* HomeTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		CCD0ED5627F447C400E57F21 = {
 			isa = PBXGroup;
 			children = (
@@ -60,11 +70,11 @@
 		CCD0ED6127F447C400E57F21 /* Forabet Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				CCD0ED7827F4487700E57F21 /* Controllers */,
+				CCD0ED7727F4486A00E57F21 /* Storyboards */,
 				CCD0ED7B27F4489B00E57F21 /* Services */,
 				CCD0ED7A27F4488F00E57F21 /* Models */,
 				CCD0ED7627F4484E00E57F21 /* SupportFiles */,
-				CCD0ED7827F4487700E57F21 /* Controllers */,
-				CCD0ED7727F4486A00E57F21 /* Storyboards */,
 				CCD0ED7927F4488100E57F21 /* Resources */,
 			);
 			path = "Forabet Challenge";
@@ -92,7 +102,8 @@
 		CCD0ED7827F4487700E57F21 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CCD0ED6627F447C400E57F21 /* ViewController.swift */,
+				CC25A35A27F4A17200FDA30B /* Cells */,
+				CCD0ED6627F447C400E57F21 /* HomeViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -192,8 +203,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC25A35C27F4A1A400FDA30B /* HomeTableViewCell.swift in Sources */,
 				CCD0ED7F27F44B3500E57F21 /* GameModel.swift in Sources */,
-				CCD0ED6727F447C400E57F21 /* ViewController.swift in Sources */,
+				CCD0ED6727F447C400E57F21 /* HomeViewController.swift in Sources */,
 				CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */,
 				CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */,
 				CCD0ED7D27F44AA200E57F21 /* StorageManager.swift in Sources */,
