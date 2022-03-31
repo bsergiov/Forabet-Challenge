@@ -1,13 +1,13 @@
 //
-//  HomeTableViewCell.swift
+//  MainNonActiveTableViewCell.swift
 //  Forabet Challenge
 //
-//  Created by SV on 30.03.2022.
+//  Created by SV on 31.03.2022.
 //
 
 import UIKit
 
-class HomeTableViewCell: UITableViewCell {
+class MainNonActiveTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -19,5 +19,5 @@ class HomeTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
+    
 }

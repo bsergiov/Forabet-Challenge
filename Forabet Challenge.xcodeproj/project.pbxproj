@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC25A35C27F4A1A400FDA30B /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A35B27F4A1A400FDA30B /* HomeTableViewCell.swift */; };
+		CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A36727F5A2C200FDA30B /* MainActiveGameTableViewCell.swift */; };
+		CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A36827F5A2C200FDA30B /* MainActiveGameTableViewCell.xib */; };
+		CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A36B27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift */; };
+		CC25A36E27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A36C27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
 		CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6227F447C400E57F21 /* AppDelegate.swift */; };
 		CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */; };
@@ -20,7 +23,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		CC25A35B27F4A1A400FDA30B /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
+		CC25A36727F5A2C200FDA30B /* MainActiveGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActiveGameTableViewCell.swift; sourceTree = "<group>"; };
+		CC25A36827F5A2C200FDA30B /* MainActiveGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainActiveGameTableViewCell.xib; sourceTree = "<group>"; };
+		CC25A36B27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNonActiveTableViewCell.swift; sourceTree = "<group>"; };
+		CC25A36C27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNonActiveTableViewCell.xib; sourceTree = "<group>"; };
 		CCA0362927F4DFD60041C702 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forabet Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD0ED6227F447C400E57F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -48,7 +54,10 @@
 		CC25A35A27F4A17200FDA30B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				CC25A35B27F4A1A400FDA30B /* HomeTableViewCell.swift */,
+				CC25A36727F5A2C200FDA30B /* MainActiveGameTableViewCell.swift */,
+				CC25A36827F5A2C200FDA30B /* MainActiveGameTableViewCell.xib */,
+				CC25A36B27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift */,
+				CC25A36C27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -195,6 +204,8 @@
 			files = (
 				CCD0ED6F27F447C600E57F21 /* LaunchScreen.storyboard in Resources */,
 				CCD0ED6C27F447C600E57F21 /* Assets.xcassets in Resources */,
+				CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */,
+				CC25A36E27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib in Resources */,
 				CCD0ED6A27F447C400E57F21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,11 +217,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CC25A35C27F4A1A400FDA30B /* HomeTableViewCell.swift in Sources */,
 				CCD0ED7F27F44B3500E57F21 /* GameModel.swift in Sources */,
 				CCD0ED6727F447C400E57F21 /* HomeViewController.swift in Sources */,
 				CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */,
 				CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */,
+				CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */,
+				CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */,
 				CCD0ED7D27F44AA200E57F21 /* StorageManager.swift in Sources */,
 				CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */,
 			);
