@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ConditionCollectionViewCell" id="gTV-IL-0wX" customClass="ConditionCollectionViewCell" customModule="Forabet_Challenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="223"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Gmt-lK-lhP">
+                        <rect key="frame" x="16" y="0.0" width="288" height="32"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="31" id="fUq-8y-KQt"/>
+                        </constraints>
+                        <segments>
+                            <segment title="Time"/>
+                            <segment title="Points"/>
+                            <segment title="Time&amp;Points"/>
+                        </segments>
+                        <connections>
+                            <action selector="chooseGame:" destination="gTV-IL-0wX" eventType="valueChanged" id="pyy-Ih-RiY"/>
+                        </connections>
+                    </segmentedControl>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Condition description Condition description Condition description Condition description Condition description " textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3V-A1-ibt">
+                        <rect key="frame" x="16" y="46" width="288" height="67"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="67" id="9id-1P-t6W"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" systemColor="systemGray5Color"/>
+                        <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </label>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter time game" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Re5-2v-vAt">
+                        <rect key="frame" x="16" y="189" width="288" height="34"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="PkK-4j-X9b"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter max points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqo-Ct-tCy">
+                        <rect key="frame" x="16" y="128" width="288" height="34"/>
+                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="34" id="Sog-ji-97n"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <textInputTraits key="textInputTraits"/>
+                    </textField>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstItem="R3V-A1-ibt" firstAttribute="top" secondItem="Gmt-lK-lhP" secondAttribute="bottom" constant="15" id="2JL-O6-0Zn"/>
+                <constraint firstItem="zqo-Ct-tCy" firstAttribute="top" secondItem="R3V-A1-ibt" secondAttribute="bottom" constant="15" id="C6d-La-7y4"/>
+                <constraint firstAttribute="trailing" secondItem="zqo-Ct-tCy" secondAttribute="trailing" constant="16" id="O0x-ff-Jq8"/>
+                <constraint firstItem="Gmt-lK-lhP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oih-A5-WVh"/>
+                <constraint firstItem="R3V-A1-ibt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="TKs-NV-OuM"/>
+                <constraint firstAttribute="trailing" secondItem="Gmt-lK-lhP" secondAttribute="trailing" constant="16" id="V6K-JU-wpr"/>
+                <constraint firstAttribute="trailing" secondItem="R3V-A1-ibt" secondAttribute="trailing" constant="16" id="jg7-ET-5Gb"/>
+                <constraint firstItem="Re5-2v-vAt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="l3p-P6-Ddk"/>
+                <constraint firstItem="zqo-Ct-tCy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="na7-S4-1qy"/>
+                <constraint firstAttribute="bottom" secondItem="Re5-2v-vAt" secondAttribute="bottom" id="qPp-j0-DlV"/>
+                <constraint firstAttribute="trailing" secondItem="Re5-2v-vAt" secondAttribute="trailing" constant="16" id="qbg-HV-D9V"/>
+                <constraint firstItem="Gmt-lK-lhP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="xmR-bS-4C2"/>
+            </constraints>
+            <size key="customSize" width="561" height="223"/>
+            <connections>
+                <outlet property="descriptionLabel" destination="R3V-A1-ibt" id="0xb-J7-BKy"/>
+                <outlet property="pointsTf" destination="zqo-Ct-tCy" id="Lof-G4-M4b"/>
+                <outlet property="timeTf" destination="Re5-2v-vAt" id="Fh4-7n-N3L"/>
+            </connections>
+            <point key="canvasLocation" x="181.15942028985509" y="176.45089285714286"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray5Color">
+            <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
