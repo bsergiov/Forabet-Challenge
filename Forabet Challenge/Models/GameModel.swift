@@ -6,7 +6,16 @@
 //
 
 import Foundation
+import RealmSwift
 
-struct GameModel {
-    let name: String
+class GameModel: Object {
+    @Persisted var nameGame = ""
+    @Persisted var typeGame = 0
+    @Persisted var time: String?
+    @Persisted var pointsMax: Int?
+    @Persisted var players: List<Player>
+}
+
+class Player: Object {
+    @Persisted var playerName = "Player "
 }
