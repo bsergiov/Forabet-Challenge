@@ -7,11 +7,13 @@
 
 import UIKit
 
-
-
 class AddGameCollectionViewController: UICollectionViewController {
 
-    var players = ["player1", "player2"]
+    var players: [Player] = [Player(), Player()]
+    
+    var game = GameModel()
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,20 +28,20 @@ class AddGameCollectionViewController: UICollectionViewController {
         collectionView.register(uiNibPlayer, forCellWithReuseIdentifier: PlayerNewGameCollectionViewCell.id)
     }
     
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+    // MARK: - IB Action
+    @IBAction func navigationButtonTapped(_ sender: UIBarButtonItem) {
+        switch sender.title {
+        case "Exit":
+            dismiss(animated: true)
+        default:
+            // storage logic
+            game.players.insert(contentsOf: players, at: 0)
+            StorageManager.shared.save(game)
+            dismiss(animated: true)
+        }
     }
-    */
 
     // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         
         return 3
@@ -57,18 +59,22 @@ class AddGameCollectionViewController: UICollectionViewController {
         
         if indexPath.section == 0 {
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NameGameNewGameCollectionViewCell.id, for: indexPath) as! NameGameNewGameCollectionViewCell
+            cell.delegate = self
             return cell
         }
         
         if indexPath.section == 1 {
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConditionCollectionViewCell.id, for: indexPath) as! ConditionCollectionViewCell
+            cell.delegate = self
             return cell
             
         }
         
         if indexPath.section == 2 {
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PlayerNewGameCollectionViewCell.id, for: indexPath) as! PlayerNewGameCollectionViewCell
-            cell.playerNameTf.placeholder = players[indexPath.item]
+            cell.delegate = self
+            cell.cellId = indexPath.item
+            cell.playerNameTf.placeholder = "\(players[indexPath.item].playerName) \(indexPath.item + 1)"
             return cell
         }
         
@@ -91,10 +97,7 @@ class AddGameCollectionViewController: UICollectionViewController {
             case 2:
                 typedHeaderView.headerLabel.text = "Players"
                 typedHeaderView.addPlayer.isHidden = false
-                typedHeaderView.changePlayer {[weak self] count in
-                    
-                    print(count)
-                }
+                typedHeaderView.delegate = self
             default:
                 assert(false, "Invalid element type")
             }
@@ -115,3 +118,40 @@ extension AddGameCollectionViewController: UICollectionViewDelegateFlowLayout {
         return CGSize(width: width, height: height)
     }
 }
+
+extension AddGameCollectionViewController: AddedGameDelegate {
+    func getPlayers(playerName: String, forId: Int) {
+        players[forId].playerName = playerName
+        print("tut for player \(forId) name \(playerName)")
+    }
+    
+    func addPlayer() {
+        players.append(Player())
+        collectionView.reloadData()
+    }
+    
+    func getTypeGame(typeGame: Int) {
+        game.typeGame = typeGame
+        print("tut typeGame \(typeGame)")
+    }
+    
+    func getTimeSettings(time: String) {
+        game.time = time
+        print("tut time setting \(time)")
+    }
+    
+    func getPoints(points: Int) {
+        game.pointsMax = points
+        print("tut points \(points)")
+    }
+    
+   
+    func getName(_ nameGame: String) {
+        game.nameGame = nameGame
+        print("tut name Game \(nameGame)")
+    }
+    
+    
+}
+
+

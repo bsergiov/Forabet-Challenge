@@ -14,6 +14,9 @@ class NameGameNewGameCollectionViewCell: UICollectionViewCell {
     // MARK: - IB Outlets
     @IBOutlet weak var nameGameTf: UITextField!
     
+    // MARK: - Public Properties
+    var delegate: AddedGameDelegate!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,5 +26,8 @@ class NameGameNewGameCollectionViewCell: UICollectionViewCell {
 }
 
 extension NameGameNewGameCollectionViewCell: UITextFieldDelegate {
-    
+    //changed text field
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        delegate.getName(textField.text ?? "")
+    }
 }

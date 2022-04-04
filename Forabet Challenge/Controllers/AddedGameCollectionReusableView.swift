@@ -12,16 +12,13 @@ class AddedGameCollectionReusableView: UICollectionReusableView {
     // MARK: - IB Outlets
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var addPlayer: UIButton!
-    var currentPlayer = 2
-    var completion: ((_ current: Int) -> Void)!
+    var delegate: AddedGameDelegate!
+    
+    
   
-    
-    
     @IBAction func tappedAddPlayer() {
-        currentPlayer += 1
+        delegate.addPlayer()
     }
     
-    func changePlayer(completion: @escaping (_ count: Int) -> Void) {
-        completion(currentPlayer)
-    }
+    
 }

@@ -15,10 +15,13 @@ class PlayerNewGameCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var playerNameTf: UITextField!
     
     // MARK: - Public Properties
-    var valueTest: String!
+    var cellId: Int!
+    var delegate: AddedGameDelegate!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        playerNameTf.delegate = self
+        
         // Initialization code
     }
     
@@ -27,4 +30,10 @@ class PlayerNewGameCollectionViewCell: UICollectionViewCell {
         playerNameTf.placeholder = forId
     }
 
+}
+
+extension PlayerNewGameCollectionViewCell: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        delegate.getPlayers(playerName: textField.text ?? "", forId: cellId)
+    }
 }

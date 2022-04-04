@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		138263AB3FEB03F168F242C8 /* Pods_Forabet_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E6954C7C9BAD2052990BA4 /* Pods_Forabet_Challenge.framework */; };
 		CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A36727F5A2C200FDA30B /* MainActiveGameTableViewCell.swift */; };
 		CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A36827F5A2C200FDA30B /* MainActiveGameTableViewCell.xib */; };
 		CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A36B27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift */; };
@@ -21,6 +22,7 @@
 		CC25A38027F7512000FDA30B /* PlayerNewGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A37E27F7512000FDA30B /* PlayerNewGameCollectionViewCell.swift */; };
 		CC25A38127F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A37F27F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
+		CCA8183927FA49BD00A8CBC6 /* AddedGameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */; };
 		CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6227F447C400E57F21 /* AppDelegate.swift */; };
 		CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */; };
 		CCD0ED6727F447C400E57F21 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6627F447C400E57F21 /* HomeViewController.swift */; };
@@ -32,6 +34,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38E6954C7C9BAD2052990BA4 /* Pods_Forabet_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forabet_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39336EBF8F5ED99C78CA3472 /* Pods-Forabet Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forabet Challenge.release.xcconfig"; path = "Target Support Files/Pods-Forabet Challenge/Pods-Forabet Challenge.release.xcconfig"; sourceTree = "<group>"; };
+		606389C5A93A9049959F3311 /* Pods-Forabet Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forabet Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Forabet Challenge/Pods-Forabet Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		CC25A36727F5A2C200FDA30B /* MainActiveGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActiveGameTableViewCell.swift; sourceTree = "<group>"; };
 		CC25A36827F5A2C200FDA30B /* MainActiveGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainActiveGameTableViewCell.xib; sourceTree = "<group>"; };
 		CC25A36B27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNonActiveTableViewCell.swift; sourceTree = "<group>"; };
@@ -46,6 +51,7 @@
 		CC25A37E27F7512000FDA30B /* PlayerNewGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNewGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC25A37F27F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerNewGameCollectionViewCell.xib; sourceTree = "<group>"; };
 		CCA0362927F4DFD60041C702 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
+		CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedGameDelegate.swift; sourceTree = "<group>"; };
 		CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forabet Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD0ED6227F447C400E57F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,12 +69,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				138263AB3FEB03F168F242C8 /* Pods_Forabet_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7067A24268D8EB44F3D84F58 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				606389C5A93A9049959F3311 /* Pods-Forabet Challenge.debug.xcconfig */,
+				39336EBF8F5ED99C78CA3472 /* Pods-Forabet Challenge.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		BA2D1C0A9F9862ED0EA28D4C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				38E6954C7C9BAD2052990BA4 /* Pods_Forabet_Challenge.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		CC25A35A27F4A17200FDA30B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -94,11 +118,21 @@
 			path = NewGames;
 			sourceTree = "<group>";
 		};
+		CCA8183727FA49A300A8CBC6 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
 		CCD0ED5627F447C400E57F21 = {
 			isa = PBXGroup;
 			children = (
 				CCD0ED6127F447C400E57F21 /* Forabet Challenge */,
 				CCD0ED6027F447C400E57F21 /* Products */,
+				7067A24268D8EB44F3D84F58 /* Pods */,
+				BA2D1C0A9F9862ED0EA28D4C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -174,6 +208,7 @@
 		CCD0ED7B27F4489B00E57F21 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CCA8183727FA49A300A8CBC6 /* Protocols */,
 				CCD0ED7C27F44AA200E57F21 /* StorageManager.swift */,
 			);
 			path = Services;
@@ -186,9 +221,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CCD0ED7327F447C600E57F21 /* Build configuration list for PBXNativeTarget "Forabet Challenge" */;
 			buildPhases = (
+				0A11965C6F5C71211D1B725C /* [CP] Check Pods Manifest.lock */,
 				CCD0ED5B27F447C400E57F21 /* Sources */,
 				CCD0ED5C27F447C400E57F21 /* Frameworks */,
 				CCD0ED5D27F447C400E57F21 /* Resources */,
+				290CF80C87237C984F832983 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -250,6 +287,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		0A11965C6F5C71211D1B725C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Forabet Challenge-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		290CF80C87237C984F832983 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forabet Challenge/Pods-Forabet Challenge-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Forabet Challenge/Pods-Forabet Challenge-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Forabet Challenge/Pods-Forabet Challenge-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		CCD0ED5B27F447C400E57F21 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -258,6 +337,7 @@
 				CCD0ED7F27F44B3500E57F21 /* GameModel.swift in Sources */,
 				CCD0ED6727F447C400E57F21 /* HomeViewController.swift in Sources */,
 				CC25A37827F724EB00FDA30B /* ConditionCollectionViewCell.swift in Sources */,
+				CCA8183927FA49BD00A8CBC6 /* AddedGameDelegate.swift in Sources */,
 				CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */,
 				CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */,
 				CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */,
@@ -410,6 +490,7 @@
 		};
 		CCD0ED7427F447C600E57F21 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 606389C5A93A9049959F3311 /* Pods-Forabet Challenge.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -438,6 +519,7 @@
 		};
 		CCD0ED7527F447C600E57F21 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39336EBF8F5ED99C78CA3472 /* Pods-Forabet Challenge.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

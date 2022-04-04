@@ -83,7 +83,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tIt-cm-ie4">
                                     <rect key="frame" x="24" y="34.5" width="150" height="21"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="150" id="GC8-92-vgm"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="GC8-92-vgm"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -107,6 +107,7 @@
                                 <constraint firstItem="VYM-Rd-SA8" firstAttribute="centerY" secondItem="FH0-Ro-qpk" secondAttribute="centerY" id="Fln-aL-qOY"/>
                                 <constraint firstItem="tIt-cm-ie4" firstAttribute="centerY" secondItem="FH0-Ro-qpk" secondAttribute="centerY" id="bau-eK-tma"/>
                                 <constraint firstAttribute="trailingMargin" secondItem="VYM-Rd-SA8" secondAttribute="trailing" constant="16" id="lvG-x4-84P"/>
+                                <constraint firstItem="VYM-Rd-SA8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tIt-cm-ie4" secondAttribute="trailing" constant="8" symbolic="YES" id="toK-wS-Hbp"/>
                                 <constraint firstItem="tIt-cm-ie4" firstAttribute="leading" secondItem="FH0-Ro-qpk" secondAttribute="leadingMargin" constant="16" id="zKe-Il-qcg"/>
                             </constraints>
                             <connections>
@@ -120,8 +121,16 @@
                         </connections>
                     </collectionView>
                     <navigationItem key="navigationItem" id="sew-qD-NGw">
-                        <barButtonItem key="leftBarButtonItem" title="Exit" id="nbE-Pw-kxG"/>
-                        <barButtonItem key="rightBarButtonItem" title="Done" id="wbT-gl-5gk"/>
+                        <barButtonItem key="leftBarButtonItem" title="Exit" id="nbE-Pw-kxG">
+                            <connections>
+                                <action selector="navigationButtonTapped:" destination="RIi-KL-TUa" id="o9k-5n-wh1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Done" id="wbT-gl-5gk">
+                            <connections>
+                                <action selector="navigationButtonTapped:" destination="RIi-KL-TUa" id="JLV-Zd-2xa"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="saS-TK-5JJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
