@@ -46,6 +46,7 @@ class ConditionCollectionViewCell: UICollectionViewCell {
         
         setupButtonForTf()
         
+        
         timeTf.inputView = picker
         
         pointsTf.delegate = self
@@ -75,16 +76,31 @@ class ConditionCollectionViewCell: UICollectionViewCell {
 // MARK: - Private Methodes
 extension ConditionCollectionViewCell {
     private func setupButtonForTf(){
-        let toolBar = UIToolbar()
-        toolBar.barStyle = .default
-        toolBar.sizeToFit()
+        let toolBarTime = UIToolbar()
+        toolBarTime.barStyle = .default
+        toolBarTime.sizeToFit()
         let buttonDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
         let buttoCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
 
-        toolBar.setItems([buttoCancel, spaceButton, buttonDone], animated: true)
-        toolBar.isUserInteractionEnabled = true
-        timeTf.inputAccessoryView = toolBar
+        toolBarTime.setItems([buttoCancel, spaceButton, buttonDone], animated: true)
+        toolBarTime.isUserInteractionEnabled = true
+        timeTf.inputAccessoryView = toolBarTime
+        
+        let toolBarPoint = UIToolbar()
+        toolBarPoint.barStyle = .default
+        toolBarPoint.sizeToFit()
+        let btnDonePoint = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTappedPoint))
+        let btnCancelPoint = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
+        toolBarPoint.setItems([btnCancelPoint, spaceButton, btnDonePoint], animated: true)
+        toolBarPoint.isUserInteractionEnabled = true
+        pointsTf.inputAccessoryView = toolBarPoint
+    }
+    
+    @objc private func doneTappedPoint() {
+        guard let points = Int(pointsTf.text ?? ""), points > 0 else { return }
+        
+        delegate.getPoints(points: points)
     }
     
     @objc private func doneTapped(){
@@ -144,7 +160,6 @@ extension ConditionCollectionViewCell: UIPickerViewDelegate, UIPickerViewDataSou
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-         // TODO validate for first row !!!
         let index = row == 0 ? 0 : row - 1
         if component == 0 {
             minut = timeSet[0][index]

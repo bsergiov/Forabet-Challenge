@@ -9,6 +9,7 @@ import UIKit
 
 class NameGameNewGameCollectionViewCell: UICollectionViewCell {
 
+    // MARK: - ID Cell
     static let id = "NameGameNewGameCollectionViewCell"
     
     // MARK: - IB Outlets
@@ -17,17 +18,46 @@ class NameGameNewGameCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Properties
     var delegate: AddedGameDelegate!
     
-    
+    // MARK: - Life Cicle
     override func awakeFromNib() {
         super.awakeFromNib()
         nameGameTf.delegate = self
+        setupBtnForTf()
     }
-
 }
 
+// MARK: - Private Methodes
+extension NameGameNewGameCollectionViewCell {
+    private func setupBtnForTf() {
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.sizeToFit()
+        let buttonDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
+        let buttoCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        
+        toolBar.setItems([buttoCancel, spaceButton, buttonDone], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        nameGameTf.inputAccessoryView = toolBar
+    }
+    
+    @objc private func doneTapped() {
+        guard let name = nameGameTf.text, !name.isEmpty else { return }
+        
+        delegate.getName(name)
+        cancelTapped()
+    }
+    
+    @objc private func cancelTapped() {
+        contentView.endEditing(true)
+    }
+}
+
+// MARK: - UITextFieldDelegate
 extension NameGameNewGameCollectionViewCell: UITextFieldDelegate {
-    //changed text field
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        delegate.getName(textField.text ?? "")
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        doneTapped()
+        return true
     }
 }
