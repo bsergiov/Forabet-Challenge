@@ -67,7 +67,6 @@ class AddGameCollectionViewController: UICollectionViewController {
           let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ConditionCollectionViewCell.id, for: indexPath) as! ConditionCollectionViewCell
             cell.delegate = self
             return cell
-            
         }
         
         if indexPath.section == 2 {
@@ -77,7 +76,6 @@ class AddGameCollectionViewController: UICollectionViewController {
             cell.playerNameTf.placeholder = "\(players[indexPath.item].playerName) \(indexPath.item + 1)"
             return cell
         }
-        
         return UICollectionViewCell()
     }
     
@@ -120,6 +118,10 @@ extension AddGameCollectionViewController: UICollectionViewDelegateFlowLayout {
 }
 
 extension AddGameCollectionViewController: AddedGameDelegate {
+    func getTimeSettings(minut: Int, seconds: Int) {
+        print("set min \(minut) and sec \(seconds)")
+    }
+    
     func getPlayers(playerName: String, forId: Int) {
         players[forId].playerName = playerName
         print("tut for player \(forId) name \(playerName)")
@@ -135,23 +137,14 @@ extension AddGameCollectionViewController: AddedGameDelegate {
         print("tut typeGame \(typeGame)")
     }
     
-    func getTimeSettings(time: String) {
-        game.time = time
-        print("tut time setting \(time)")
-    }
     
     func getPoints(points: Int) {
         game.pointsMax = points
         print("tut points \(points)")
     }
     
-   
     func getName(_ nameGame: String) {
         game.nameGame = nameGame
         print("tut name Game \(nameGame)")
     }
-    
-    
 }
-
-

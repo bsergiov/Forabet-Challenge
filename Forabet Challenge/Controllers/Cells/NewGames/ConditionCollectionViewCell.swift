@@ -17,7 +17,6 @@ class ConditionCollectionViewCell: UICollectionViewCell {
     
     static let id = "ConditionCollectionViewCell"
     
-    
     // MARK: - IB Outlets
     @IBOutlet weak var descriptionLabel: UILabel! {
         didSet {
@@ -25,32 +24,134 @@ class ConditionCollectionViewCell: UICollectionViewCell {
         }
     }
     @IBOutlet weak var pointsTf: UITextField!
-    
-    // MARK: - Public Outlets
-    var delegate: AddedGameDelegate!
-    
     @IBOutlet weak var timeTf: UITextField!
     
+    // MARK: - Public Properties
+    var delegate: AddedGameDelegate!
+    
+    // MARK: - Private Properties
+    private let picker = UIPickerView()
+    
+    private var timeSet = DataManager.getTimeSettings()
+    
+    var minut = 0
+    var seconds = 0
+   
+    // MARK: - Life Cicle
     override func awakeFromNib() {
         super.awakeFromNib()
         
+        picker.delegate = self
+        picker.dataSource = self
+        
+        setupButtonForTf()
+        
+        timeTf.inputView = picker
+        
         pointsTf.delegate = self
         timeTf.delegate = self
+        
+        pointsTf.isHidden = true
     }
-    
     
     @IBAction func chooseGame(_ sender: UISegmentedControl) {
         switch sender.selectedSegmentIndex {
-        case 0:
+        case 0: // Time
             descriptionLabel.text = DescriptionCondition.time.rawValue
-        case 1:
+            timeTf.isHidden = false
+            pointsTf.isHidden = true
+        case 1: // Points
+            pointsTf.isHidden = false
+            timeTf.isHidden = true
             descriptionLabel.text = DescriptionCondition.point.rawValue
-        default:
+        default: // Time & Points
+            pointsTf.isHidden = false
+            timeTf.isHidden = false
             descriptionLabel.text = DescriptionCondition.timeAndPoint.rawValue
         }
     }
 }
 
-extension ConditionCollectionViewCell: UITextFieldDelegate {
+// MARK: - Private Methodes
+extension ConditionCollectionViewCell {
+    private func setupButtonForTf(){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.sizeToFit()
+        let buttonDone = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneTapped))
+        let buttoCancel = UIBarButtonItem(barButtonSystemItem: .cancel, target: self, action: #selector(cancelTapped))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+
+        toolBar.setItems([buttoCancel, spaceButton, buttonDone], animated: true)
+        toolBar.isUserInteractionEnabled = true
+        timeTf.inputAccessoryView = toolBar
+    }
     
+    @objc private func doneTapped(){
+        if minut == 0, seconds == 0 {
+            return
+        }
+        delegate.getTimeSettings(minut: minut, seconds: seconds)
+        contentView.endEditing(true)
+    }
+    
+    @objc private func cancelTapped(){
+        contentView.endEditing(true)
+    }
+}
+
+extension ConditionCollectionViewCell: UITextFieldDelegate {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        switch textField {
+        case pointsTf:
+            guard let maxPoints = Int(textField.text ?? "") else { return }
+            delegate.getPoints(points: maxPoints)
+        default:
+            break
+        }
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
+        contentView.endEditing(true)
+    }
+}
+
+extension ConditionCollectionViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        timeSet.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        timeSet[component].count + 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        if component == 0 {
+            if row == 0 {
+                return "Minute"
+            }
+            return "\(timeSet[component][row - 1])"
+        }
+        
+        if component == 1 {
+            if row == 0 {
+                return "Seconds"
+            }
+            return "\(timeSet[component][row - 1])"
+        }
+        return ""
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+         // TODO validate for first row !!!
+        let index = row == 0 ? 0 : row - 1
+        if component == 0 {
+            minut = timeSet[0][index]
+        }
+        if component == 1 {
+            seconds = timeSet[1][index]
+        }
+        timeTf.text = "Minut \(minut) second \(seconds)"
+    }
 }

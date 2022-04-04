@@ -41,39 +41,35 @@
                         <color key="textColor" systemColor="systemGray5Color"/>
                         <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </label>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter time game" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Re5-2v-vAt">
-                        <rect key="frame" x="16" y="189" width="288" height="34"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="34" id="PkK-4j-X9b"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
-                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter max points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqo-Ct-tCy">
-                        <rect key="frame" x="16" y="128" width="288" height="34"/>
-                        <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="34" id="Sog-ji-97n"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                        <textInputTraits key="textInputTraits"/>
-                    </textField>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalCentering" spacing="27" translatesAutoresizingMaskIntoConstraints="NO" id="EIQ-Ay-ei9">
+                        <rect key="frame" x="16" y="128" width="288" height="95"/>
+                        <subviews>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter max points" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zqo-Ct-tCy">
+                                <rect key="frame" x="0.0" y="0.0" width="288" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter time game" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Re5-2v-vAt">
+                                <rect key="frame" x="0.0" y="61" width="288" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <constraints>
                 <constraint firstItem="R3V-A1-ibt" firstAttribute="top" secondItem="Gmt-lK-lhP" secondAttribute="bottom" constant="15" id="2JL-O6-0Zn"/>
-                <constraint firstItem="zqo-Ct-tCy" firstAttribute="top" secondItem="R3V-A1-ibt" secondAttribute="bottom" constant="15" id="C6d-La-7y4"/>
-                <constraint firstAttribute="trailing" secondItem="zqo-Ct-tCy" secondAttribute="trailing" constant="16" id="O0x-ff-Jq8"/>
+                <constraint firstAttribute="trailing" secondItem="EIQ-Ay-ei9" secondAttribute="trailing" constant="16" id="EL1-Ne-p1K"/>
                 <constraint firstItem="Gmt-lK-lhP" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Oih-A5-WVh"/>
                 <constraint firstItem="R3V-A1-ibt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="TKs-NV-OuM"/>
                 <constraint firstAttribute="trailing" secondItem="Gmt-lK-lhP" secondAttribute="trailing" constant="16" id="V6K-JU-wpr"/>
+                <constraint firstItem="EIQ-Ay-ei9" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="dQt-R7-Gft"/>
                 <constraint firstAttribute="trailing" secondItem="R3V-A1-ibt" secondAttribute="trailing" constant="16" id="jg7-ET-5Gb"/>
-                <constraint firstItem="Re5-2v-vAt" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="l3p-P6-Ddk"/>
-                <constraint firstItem="zqo-Ct-tCy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="na7-S4-1qy"/>
-                <constraint firstAttribute="bottom" secondItem="Re5-2v-vAt" secondAttribute="bottom" id="qPp-j0-DlV"/>
-                <constraint firstAttribute="trailing" secondItem="Re5-2v-vAt" secondAttribute="trailing" constant="16" id="qbg-HV-D9V"/>
+                <constraint firstItem="EIQ-Ay-ei9" firstAttribute="top" secondItem="R3V-A1-ibt" secondAttribute="bottom" constant="15" id="qhV-3C-6ee"/>
                 <constraint firstItem="Gmt-lK-lhP" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="xmR-bS-4C2"/>
             </constraints>
             <size key="customSize" width="561" height="223"/>
