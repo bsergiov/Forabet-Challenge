@@ -22,6 +22,12 @@ class StorageManager {
         }
     }
     
+    func fetchGame(completion: @escaping (Results<GameModel>) -> Void) {
+        
+        let games = realm.objects(GameModel.self)
+        completion(games)
+    }
+    
     private func write(completion: () -> Void) {
         do {
             try realm.write { completion() }

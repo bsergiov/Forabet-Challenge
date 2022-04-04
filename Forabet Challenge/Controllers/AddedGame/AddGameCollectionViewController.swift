@@ -89,7 +89,7 @@ class AddGameCollectionViewController: UICollectionViewController {
             typedHeaderView.addPlayer.isHidden = true
             switch indexPath.section {
             case 0:
-                typedHeaderView.headerLabel.text = "Name Game"
+                typedHeaderView.isHidden = true
             case 1:
                 typedHeaderView.headerLabel.text = "Condition"
             case 2:
@@ -123,8 +123,8 @@ extension AddGameCollectionViewController: AddedGameDelegate {
     }
     
     func getPlayers(playerName: String, forId: Int) {
+        // TODO доработать модель под время и таймер
         players[forId].playerName = playerName
-        print("tut for player \(forId) name \(playerName)")
     }
     
     func addPlayer() {
@@ -134,17 +134,14 @@ extension AddGameCollectionViewController: AddedGameDelegate {
     
     func getTypeGame(typeGame: Int) {
         game.typeGame = typeGame
-        print("tut typeGame \(typeGame)")
     }
     
     
     func getPoints(points: Int) {
         game.pointsMax = points
-        print("tut points \(points)")
     }
     
     func getName(_ nameGame: String) {
         game.nameGame = nameGame
-        print("tut name Game \(nameGame)")
     }
 }

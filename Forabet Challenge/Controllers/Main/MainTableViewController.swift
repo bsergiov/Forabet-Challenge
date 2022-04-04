@@ -11,9 +11,14 @@ class MainTableViewController: UITableViewController {
     
     var isTimerShow = false
     
+    private var completedGame: [GameModel] = []
+    private var notCompletedGame: [GameModel] = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
+        fetchDb()
+        
         let cellMainActiveGameTableViewCell = UINib(nibName: "MainActiveGameTableViewCell", bundle: nil)
         tableView.register(cellMainActiveGameTableViewCell, forCellReuseIdentifier: "mainActiveGameTableViewCell")
         tableView.separatorStyle = .none
@@ -27,11 +32,7 @@ class MainTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /*
-         список игра разделить на активные и не активные и выводить количестов
-         ячеек из каждого списка по секциям
-         */
-        return 2
+        section == 0 ? completedGame.count : notCompletedGame.count
     }
     
     
@@ -61,5 +62,18 @@ class MainTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         95
+    }
+}
+
+// MARK: - Private Methodes
+extension MainTableViewController {
+    private func fetchDb() {
+        StorageManager.shared.fetchGame { [weak self] results in
+            self?.completedGame = results.filter { !$0.isComleted }
+            self?.notCompletedGame = results.filter { $0.isComleted }
+            DispatchQueue.main.async {
+                self?.tableView.reloadData()
+            }
+        }
     }
 }

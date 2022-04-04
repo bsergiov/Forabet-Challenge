@@ -14,11 +14,7 @@ class AddedGameCollectionReusableView: UICollectionReusableView {
     @IBOutlet weak var addPlayer: UIButton!
     var delegate: AddedGameDelegate!
     
-    
-  
     @IBAction func tappedAddPlayer() {
         delegate.addPlayer()
-    }
-    
-    
+    } 
 }
