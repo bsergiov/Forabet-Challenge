@@ -9,6 +9,8 @@ import UIKit
 
 class MainActiveGameTableViewCell: UITableViewCell {
 
+    // MARK: - Public Properties
+    var game: GameModel!
     
     // MARK: - IB Outlets
     @IBOutlet weak var nameGame: UILabel!
@@ -27,11 +29,9 @@ class MainActiveGameTableViewCell: UITableViewCell {
     
     // MARK: - Publick Methodes
     func setupCellActiveGame(){
-        // передаем модель и присваеваем лэйблам значения
-    }
-    
-    func setupCellNonActiveGame() {
-        indicatorActive.isHidden = true
+        nameGame.text = game.nameGame
+        playersCount.text = "\(game.players.count)"
+        indicatorActive.isHidden = game.isComleted
     }
     
 }

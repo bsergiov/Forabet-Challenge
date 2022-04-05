@@ -46,7 +46,6 @@ class ConditionCollectionViewCell: UICollectionViewCell {
         
         setupButtonForTf()
         
-        
         timeTf.inputView = picker
         
         pointsTf.delegate = self
@@ -56,6 +55,7 @@ class ConditionCollectionViewCell: UICollectionViewCell {
     }
     
     @IBAction func chooseGame(_ sender: UISegmentedControl) {
+    
         switch sender.selectedSegmentIndex {
         case 0: // Time
             descriptionLabel.text = DescriptionCondition.time.rawValue
@@ -70,6 +70,7 @@ class ConditionCollectionViewCell: UICollectionViewCell {
             timeTf.isHidden = false
             descriptionLabel.text = DescriptionCondition.timeAndPoint.rawValue
         }
+        delegate.getTypeGame(typeGame: sender.selectedSegmentIndex)
     }
 }
 

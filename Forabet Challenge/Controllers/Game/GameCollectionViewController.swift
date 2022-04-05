@@ -7,50 +7,64 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+protocol GameDelegate {
+    func changedPlayerPoint(idPlayer: Int, point: Int)
+}
 
 class GameCollectionViewController: UICollectionViewController {
 
+    // MARK: - Public Properties
+    var game: GameModel!
+    
+    // MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        title = game.nameGame
         
-
-        // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
-
-       
+        let conditionUinib = UINib(nibName: GameConditionCollectionViewCell.id, bundle: nil)
+        collectionView.register(conditionUinib, forCellWithReuseIdentifier: GameConditionCollectionViewCell.id)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 3
     }
 
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of items
-        return 0
+        section == 1 ? game.players.count : 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameConditionCollectionViewCell.id, for: indexPath)
     
         // Configure the cell
     
         return cell
+    }
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: kind, withReuseIdentifier: GameCollectionReusableView.id, for: indexPath)
+        
+        guard let typedHeaderView = headerView as? GameCollectionReusableView else { return headerView }
+        
+        if indexPath.section == 0 {
+            typedHeaderView.titleSectionLabel.text = "Conditions"
+        }
+        
+        if indexPath.section == 1 {
+            typedHeaderView.titleSectionLabel.text = "Points"
+        }
+        
+        if indexPath.section == 3 {
+            typedHeaderView.titleSectionLabel.isHidden = !(game.typeGame == 1)
+           
+//            typedHeaderView.titleSectionLabel.text = "Time"
+        }
+        
+        return typedHeaderView
     }
 
     // MARK: UICollectionViewDelegate

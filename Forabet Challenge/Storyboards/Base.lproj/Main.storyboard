@@ -26,9 +26,6 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
-                                <connections>
-                                    <segue destination="iRK-KD-IUO" kind="show" id="Foh-n7-9wO"/>
-                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <sections/>
@@ -54,35 +51,53 @@
             </objects>
             <point key="canvasLocation" x="3042.0289855072465" y="135.9375"/>
         </scene>
-        <!--Game Collection View Controller-->
+        <!--dfsdf-->
         <scene sceneID="0xI-HZ-Hm9">
             <objects>
-                <collectionViewController id="iRK-KD-IUO" customClass="GameCollectionViewController" customModule="Forabet_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController storyboardIdentifier="GameCollectionViewController" id="iRK-KD-IUO" customClass="GameCollectionViewController" customModule="Forabet_Challenge" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="L8Y-iJ-Wze">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YkQ-YV-mk9">
                             <size key="itemSize" width="128" height="128"/>
-                            <size key="headerReferenceSize" width="50" height="107"/>
+                            <size key="headerReferenceSize" width="50" height="41"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells/>
                         <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="GameCollectionReusableView" id="McK-l4-DcU" customClass="GameCollectionReusableView" customModule="Forabet_Challenge" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="414" height="107"/>
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="41"/>
                             <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksk-Am-xRN">
+                                    <rect key="frame" x="24" y="10" width="150" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="150" id="e56-jE-2tz"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Ksk-Am-xRN" firstAttribute="leading" secondItem="McK-l4-DcU" secondAttribute="leadingMargin" constant="16" id="RGC-NM-qN4"/>
+                                <constraint firstItem="Ksk-Am-xRN" firstAttribute="centerY" secondItem="McK-l4-DcU" secondAttribute="centerY" id="gqC-mv-OFt"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="titleSectionLabel" destination="Ksk-Am-xRN" id="da5-ux-Gmb"/>
+                            </connections>
                         </collectionReusableView>
                         <connections>
                             <outlet property="dataSource" destination="iRK-KD-IUO" id="KEW-ZL-C4B"/>
                             <outlet property="delegate" destination="iRK-KD-IUO" id="bWn-bw-y0r"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" id="LCe-3b-trg"/>
+                    <navigationItem key="navigationItem" title="dfsdf" id="LCe-3b-trg"/>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rth-q9-Uy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4025" y="149"/>
+            <point key="canvasLocation" x="4024.6376811594205" y="148.66071428571428"/>
         </scene>
         <!--Add Game-->
         <scene sceneID="oCs-bf-Dbc">

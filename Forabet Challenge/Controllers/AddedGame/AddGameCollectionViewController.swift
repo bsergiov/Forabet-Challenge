@@ -13,8 +13,7 @@ class AddGameCollectionViewController: UICollectionViewController {
     
     var game = GameModel()
     
-    
-    
+    // MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,6 +25,11 @@ class AddGameCollectionViewController: UICollectionViewController {
         
         let uiNibPlayer = UINib(nibName: PlayerNewGameCollectionViewCell.id, bundle: nil)
         collectionView.register(uiNibPlayer, forCellWithReuseIdentifier: PlayerNewGameCollectionViewCell.id)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        collectionView.reloadData()
     }
     
     // MARK: - IB Action

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		138263AB3FEB03F168F242C8 /* Pods_Forabet_Challenge.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 38E6954C7C9BAD2052990BA4 /* Pods_Forabet_Challenge.framework */; };
 		CC1E253B27FB53E2002AA8F3 /* GameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E253A27FB53E2002AA8F3 /* GameCollectionViewController.swift */; };
+		CC1E253E27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC1E253C27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift */; };
+		CC1E253F27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC1E253D27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib */; };
 		CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A36727F5A2C200FDA30B /* MainActiveGameTableViewCell.swift */; };
 		CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A36827F5A2C200FDA30B /* MainActiveGameTableViewCell.xib */; };
 		CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A36B27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift */; };
@@ -40,6 +42,8 @@
 		39336EBF8F5ED99C78CA3472 /* Pods-Forabet Challenge.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forabet Challenge.release.xcconfig"; path = "Target Support Files/Pods-Forabet Challenge/Pods-Forabet Challenge.release.xcconfig"; sourceTree = "<group>"; };
 		606389C5A93A9049959F3311 /* Pods-Forabet Challenge.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Forabet Challenge.debug.xcconfig"; path = "Target Support Files/Pods-Forabet Challenge/Pods-Forabet Challenge.debug.xcconfig"; sourceTree = "<group>"; };
 		CC1E253A27FB53E2002AA8F3 /* GameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionViewController.swift; sourceTree = "<group>"; };
+		CC1E253C27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameConditionCollectionViewCell.swift; path = "Forabet Challenge/Controllers/Game/GameConditionCollectionViewCell.swift"; sourceTree = SOURCE_ROOT; };
+		CC1E253D27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = GameConditionCollectionViewCell.xib; path = "Forabet Challenge/Controllers/Game/GameConditionCollectionViewCell.xib"; sourceTree = SOURCE_ROOT; };
 		CC25A36727F5A2C200FDA30B /* MainActiveGameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainActiveGameTableViewCell.swift; sourceTree = "<group>"; };
 		CC25A36827F5A2C200FDA30B /* MainActiveGameTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainActiveGameTableViewCell.xib; sourceTree = "<group>"; };
 		CC25A36B27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNonActiveTableViewCell.swift; sourceTree = "<group>"; };
@@ -161,6 +165,8 @@
 		CCA8185A27FBA45300A8CBC6 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				CC1E253C27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift */,
+				CC1E253D27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -319,6 +325,7 @@
 				CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */,
 				CC25A36E27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib in Resources */,
 				CC25A37927F724EB00FDA30B /* ConditionCollectionViewCell.xib in Resources */,
+				CC1E253F27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib in Resources */,
 				CCD0ED6A27F447C400E57F21 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -378,6 +385,7 @@
 				CCA8183927FA49BD00A8CBC6 /* AddedGameDelegate.swift in Sources */,
 				CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */,
 				CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */,
+				CC1E253E27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift in Sources */,
 				CCA8185C27FBA4B000A8CBC6 /* GameCollectionReusableView.swift in Sources */,
 				CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */,
 				CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */,
