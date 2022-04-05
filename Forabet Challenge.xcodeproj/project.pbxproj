@@ -25,6 +25,7 @@
 		CC25A38327FB007100FDA30B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A38227FB007100FDA30B /* DataManager.swift */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
 		CCA8183927FA49BD00A8CBC6 /* AddedGameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */; };
+		CCA8185C27FBA4B000A8CBC6 /* GameCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8185B27FBA4B000A8CBC6 /* GameCollectionReusableView.swift */; };
 		CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6227F447C400E57F21 /* AppDelegate.swift */; };
 		CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */; };
 		CCD0ED6A27F447C400E57F21 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD0ED6827F447C400E57F21 /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 		CC25A38227FB007100FDA30B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		CCA0362927F4DFD60041C702 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedGameDelegate.swift; sourceTree = "<group>"; };
+		CCA8185B27FBA4B000A8CBC6 /* GameCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionReusableView.swift; sourceTree = "<group>"; };
 		CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Forabet Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		CCD0ED6227F447C400E57F21 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -141,7 +143,9 @@
 		CC25A38727FB51CC00FDA30B /* Game */ = {
 			isa = PBXGroup;
 			children = (
+				CCA8185A27FBA45300A8CBC6 /* Cell */,
 				CC1E253A27FB53E2002AA8F3 /* GameCollectionViewController.swift */,
+				CCA8185B27FBA4B000A8CBC6 /* GameCollectionReusableView.swift */,
 			);
 			path = Game;
 			sourceTree = "<group>";
@@ -152,6 +156,13 @@
 				CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CCA8185A27FBA45300A8CBC6 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		CCD0ED5627F447C400E57F21 = {
@@ -367,6 +378,7 @@
 				CCA8183927FA49BD00A8CBC6 /* AddedGameDelegate.swift in Sources */,
 				CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */,
 				CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */,
+				CCA8185C27FBA4B000A8CBC6 /* GameCollectionReusableView.swift in Sources */,
 				CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */,
 				CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */,
 				CC25A37427F71D8900FDA30B /* NewGame.swift in Sources */,
