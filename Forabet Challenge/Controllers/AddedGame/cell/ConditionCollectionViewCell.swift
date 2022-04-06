@@ -102,6 +102,7 @@ extension ConditionCollectionViewCell {
         guard let points = Int(pointsTf.text ?? ""), points > 0 else { return }
         
         delegate.getPoints(points: points)
+        cancelTapped()
     }
     
     @objc private func doneTapped(){
@@ -109,7 +110,7 @@ extension ConditionCollectionViewCell {
             return
         }
         delegate.getTimeSettings(minut: minut, seconds: seconds)
-        contentView.endEditing(true)
+        cancelTapped()
     }
     
     @objc private func cancelTapped(){
