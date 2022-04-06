@@ -56,8 +56,11 @@ extension NameGameNewGameCollectionViewCell {
 // MARK: - UITextFieldDelegate
 extension NameGameNewGameCollectionViewCell: UITextFieldDelegate {
 
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        delegate.getName(textField.text ?? "")
+    }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        doneTapped()
+        cancelTapped()
         return true
     }
 }
