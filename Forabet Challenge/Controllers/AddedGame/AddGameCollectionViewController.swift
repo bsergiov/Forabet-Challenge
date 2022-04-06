@@ -60,7 +60,6 @@ class AddGameCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
 
-        
         if indexPath.section == 0 {
            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NameGameNewGameCollectionViewCell.id, for: indexPath) as! NameGameNewGameCollectionViewCell
             cell.delegate = self
@@ -82,7 +81,6 @@ class AddGameCollectionViewController: UICollectionViewController {
         }
         return UICollectionViewCell()
     }
-    
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         switch kind {
@@ -121,7 +119,9 @@ extension AddGameCollectionViewController: UICollectionViewDelegateFlowLayout {
     }
 }
 
+// MARK: -  AddedGameDelegate
 extension AddGameCollectionViewController: AddedGameDelegate {
+    
     func getTimeSettings(minut: Int, seconds: Int) {
         game.timeMinute = minut
         game.timeSecond = seconds
@@ -142,7 +142,6 @@ extension AddGameCollectionViewController: AddedGameDelegate {
     func getTypeGame(typeGame: Int) {
         game.typeGame = typeGame
     }
-    
     
     func getPoints(points: Int) {
         game.pointsMax = points
