@@ -21,5 +21,5 @@ class GameModel: Object {
 class Player: Object {
     @Persisted var playerName = "Player "
     @Persisted var isFavorite = false
-    
+    @Persisted var points = 0
 }
