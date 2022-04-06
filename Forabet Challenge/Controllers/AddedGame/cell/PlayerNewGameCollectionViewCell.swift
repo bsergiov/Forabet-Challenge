@@ -48,9 +48,6 @@ extension PlayerNewGameCollectionViewCell {
     }
     
     @objc private func doneTapped() {
-        guard let playerName = playerNameTf.text, !playerName.isEmpty else { return }
-        
-        delegate.getPlayers(playerName: playerName, forId: cellId)
         cancelTapped()
     }
     
@@ -61,6 +58,10 @@ extension PlayerNewGameCollectionViewCell {
 
 // MARK: - UITextFieldDelegate
 extension PlayerNewGameCollectionViewCell: UITextFieldDelegate {
+    
+    func textFieldDidChangeSelection(_ textField: UITextField) {
+        delegate.getPlayers(playerName: textField.text ?? "", forId: cellId)
+    }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         doneTapped()
