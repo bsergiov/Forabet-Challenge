@@ -12,11 +12,14 @@ class GameModel: Object {
     @Persisted var nameGame = ""
     @Persisted var typeGame = 0
     @Persisted var isComleted = false
-    @Persisted var time: String?
-    @Persisted var pointsMax: Int?
+    @Persisted var timeMinute = 0
+    @Persisted var timeSecond = 0
+    @Persisted var pointsMax = 0
     @Persisted var players: List<Player>
 }
 
 class Player: Object {
     @Persisted var playerName = "Player "
+    @Persisted var isFavorite = false
+    
 }
