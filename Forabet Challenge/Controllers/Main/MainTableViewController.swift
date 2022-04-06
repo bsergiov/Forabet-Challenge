@@ -9,11 +9,14 @@ import UIKit
 
 class MainTableViewController: UITableViewController {
     
+    // MARK: - Public Properties
     var isTimerShow = false
     
+    // MARK: - Private Properties
     private var completedGame: [GameModel] = []
     private var notCompletedGame: [GameModel] = []
     
+    // MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -28,15 +31,13 @@ class MainTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
-         2
+        2
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         section == 0 ? completedGame.count : notCompletedGame.count
     }
-    
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -67,8 +68,6 @@ class MainTableViewController: UITableViewController {
         
         vc.game = indexPath.section == 0 ? completedGame[indexPath.row] : notCompletedGame[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
-//        present(vc, animated: true)
-        
     }
 }
 
