@@ -59,7 +59,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YkQ-YV-mk9">
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="YkQ-YV-mk9">
                             <size key="itemSize" width="128" height="128"/>
                             <size key="headerReferenceSize" width="50" height="41"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -73,7 +73,7 @@
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ksk-Am-xRN">
                                     <rect key="frame" x="24" y="10" width="150" height="21"/>
                                     <constraints>
-                                        <constraint firstAttribute="width" constant="150" id="e56-jE-2tz"/>
+                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="e56-jE-2tz"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
@@ -82,6 +82,7 @@
                             </subviews>
                             <constraints>
                                 <constraint firstItem="Ksk-Am-xRN" firstAttribute="leading" secondItem="McK-l4-DcU" secondAttribute="leadingMargin" constant="16" id="RGC-NM-qN4"/>
+                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Ksk-Am-xRN" secondAttribute="trailing" constant="20" symbolic="YES" id="c85-08-y92"/>
                                 <constraint firstItem="Ksk-Am-xRN" firstAttribute="centerY" secondItem="McK-l4-DcU" secondAttribute="centerY" id="gqC-mv-OFt"/>
                             </constraints>
                             <connections>

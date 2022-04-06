@@ -32,17 +32,24 @@ class GameCollectionViewController: UICollectionViewController {
         return 3
     }
 
-
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         section == 1 ? game.players.count : 1
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameConditionCollectionViewCell.id, for: indexPath)
-    
-        // Configure the cell
-    
-        return cell
+        
+        let cellDefault = collectionView.dequeueReusableCell(withReuseIdentifier: GameConditionCollectionViewCell.id, for: indexPath)
+        
+        if indexPath.section == 0 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameConditionCollectionViewCell.id, for: indexPath) as! GameConditionCollectionViewCell
+            cell.setupCell(game: game)
+            return cell
+        }
+        if indexPath.section == 1 {
+            
+        }
+        
+        return cellDefault
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -58,44 +65,24 @@ class GameCollectionViewController: UICollectionViewController {
             typedHeaderView.titleSectionLabel.text = "Points"
         }
         
-        if indexPath.section == 3 {
-            typedHeaderView.titleSectionLabel.isHidden = !(game.typeGame == 1)
-           
-//            typedHeaderView.titleSectionLabel.text = "Time"
+        if indexPath.section == 2 {
+            typedHeaderView.titleSectionLabel.isHidden = true
         }
-        
         return typedHeaderView
     }
+}
 
-    // MARK: UICollectionViewDelegate
-
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
+// MARK: - UICollectionViewDelegateFlowLayout
+extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = collectionView.frame.width
+        var height: CGFloat = 50
+        if indexPath.section == 0 {
+            height = 70
+        }
+        if indexPath.section == 1 {
+            height = 223
+        }
+        return CGSize(width: width, height: height)
     }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }
