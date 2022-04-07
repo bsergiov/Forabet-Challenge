@@ -175,9 +175,9 @@
 			children = (
 				CC1E253C27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift */,
 				CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */,
+				CC7530FB27FEE8650085BCC1 /* GameControllCollectionViewCell.swift */,
 				CC1E253D27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib */,
 				CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */,
-				CC7530FB27FEE8650085BCC1 /* GameControllCollectionViewCell.swift */,
 				CC7530FC27FEE8650085BCC1 /* GameControllCollectionViewCell.xib */,
 			);
 			path = Cell;

@@ -11,9 +11,20 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     
     static let id = "GameControllCollectionViewCell"
     
+    // MARK: - IB Outlets
+    @IBOutlet weak var timePanel: UIView!
+    
+    @IBOutlet weak var startGameBtn: UIButton!
+    @IBOutlet weak var finishGameBtn: UIButton!
+    
+    @IBOutlet weak var timerLabel: UILabel!
+    
+    // MARK: - Life Cicle
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
-
+    
+    // MARK: - IB Action
+    @IBAction func contollGameTapped(_ sender: Any) {
+    }
 }
