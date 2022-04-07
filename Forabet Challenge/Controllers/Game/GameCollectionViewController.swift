@@ -23,10 +23,12 @@ class GameCollectionViewController: UICollectionViewController {
         
         let conditionUinib = UINib(nibName: GameConditionCollectionViewCell.id, bundle: nil)
         collectionView.register(conditionUinib, forCellWithReuseIdentifier: GameConditionCollectionViewCell.id)
+        
+        let playerPoinUinib = UINib(nibName: GamePlayerPointCollectionViewCell.id, bundle: nil)
+        collectionView.register(playerPoinUinib, forCellWithReuseIdentifier: GamePlayerPointCollectionViewCell.id)
     }
 
     // MARK: UICollectionViewDataSource
-
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 3
@@ -46,6 +48,12 @@ class GameCollectionViewController: UICollectionViewController {
             return cell
         }
         if indexPath.section == 1 {
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GamePlayerPointCollectionViewCell.id, for: indexPath) as! GamePlayerPointCollectionViewCell
+            cell.delegate = self
+            cell.setupCell(idPlayer: indexPath.item,
+                           point: game.players[indexPath.item].points,
+                           namePlayer: game.players[indexPath.item].playerName)
+            return cell
             
         }
         
@@ -81,8 +89,15 @@ extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
             height = 70
         }
         if indexPath.section == 1 {
-            height = 223
+            height = 50
         }
         return CGSize(width: width, height: height)
+    }
+}
+
+// MARK: - GameDelegate
+extension GameCollectionViewController: GameDelegate {
+    func changedPlayerPoint(idPlayer: Int, point: Int) {
+        print("tut idPlayer: \(idPlayer) and point \(point)")
     }
 }
