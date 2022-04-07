@@ -83,8 +83,9 @@
             </constraints>
             <size key="customSize" width="323" height="50"/>
             <connections>
-                <outlet property="minusButton" destination="Qe7-5C-z3D" id="EKH-G5-raj"/>
+                <outlet property="minusButton" destination="Qe7-5C-z3D" id="3jf-dQ-x7d"/>
                 <outlet property="namePlayerLabel" destination="pZL-rA-L5G" id="KSG-F2-Tnh"/>
+                <outlet property="plusButton" destination="sva-MK-wRO" id="TZj-Xx-As7"/>
                 <outlet property="pointsLabel" destination="3fo-pa-MPB" id="Co7-6A-EKP"/>
             </connections>
             <point key="canvasLocation" x="335.50724637681162" y="60.9375"/>

@@ -9,12 +9,14 @@ import UIKit
 
 protocol GameDelegate {
     func changedPlayerPoint(idPlayer: Int, point: Int)
+    func changeStatusGame(currentStatus: Bool)
 }
 
 class GameCollectionViewController: UICollectionViewController {
 
     // MARK: - Public Properties
     var game: GameModel!
+    private var statusButton = false
     
     // MARK: - Life Cicle
     override func viewDidLoad() {
@@ -57,10 +59,11 @@ class GameCollectionViewController: UICollectionViewController {
             cellPlayerPoint.delegate = self
             cellPlayerPoint.setupCell(idPlayer: indexPath.item,
                                       point: game.players[indexPath.item].points,
-                                      namePlayer: game.players[indexPath.item].playerName)
+                                      namePlayer: game.players[indexPath.item].playerName, statusButton: statusButton)
             return cellPlayerPoint
         default:
             cellGameControll.setupCell(game: game, playerCell: cellPlayerPoint)
+            cellGameControll.delegate = self
 //            cellGameControll.playerDelegate = cellPlayerPoint
             return cellGameControll
         }
@@ -106,6 +109,11 @@ extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - GameDelegate
 extension GameCollectionViewController: GameDelegate {
+    func changeStatusGame(currentStatus: Bool) {
+        statusButton.toggle()
+        collectionView.reloadData()
+    }
+    
     func changedPlayerPoint(idPlayer: Int, point: Int) {
         print("tut idPlayer: \(idPlayer) and point \(point)")
     }
