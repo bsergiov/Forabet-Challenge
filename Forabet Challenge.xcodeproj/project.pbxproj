@@ -25,6 +25,8 @@
 		CC25A38027F7512000FDA30B /* PlayerNewGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A37E27F7512000FDA30B /* PlayerNewGameCollectionViewCell.swift */; };
 		CC25A38127F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A37F27F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib */; };
 		CC25A38327FB007100FDA30B /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A38227FB007100FDA30B /* DataManager.swift */; };
+		CC8225E127FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */; };
+		CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
 		CCA8183927FA49BD00A8CBC6 /* AddedGameDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */; };
 		CCA8185C27FBA4B000A8CBC6 /* GameCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA8185B27FBA4B000A8CBC6 /* GameCollectionReusableView.swift */; };
@@ -58,6 +60,8 @@
 		CC25A37E27F7512000FDA30B /* PlayerNewGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerNewGameCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC25A37F27F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerNewGameCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC25A38227FB007100FDA30B /* DataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerPointCollectionViewCell.swift; sourceTree = "<group>"; };
+		CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamePlayerPointCollectionViewCell.xib; sourceTree = "<group>"; };
 		CCA0362927F4DFD60041C702 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
 		CCA8183827FA49BD00A8CBC6 /* AddedGameDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedGameDelegate.swift; sourceTree = "<group>"; };
 		CCA8185B27FBA4B000A8CBC6 /* GameCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -166,7 +170,9 @@
 			isa = PBXGroup;
 			children = (
 				CC1E253C27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift */,
+				CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */,
 				CC1E253D27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib */,
+				CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -320,6 +326,7 @@
 			files = (
 				CCD0ED6F27F447C600E57F21 /* LaunchScreen.storyboard in Resources */,
 				CC25A38127F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib in Resources */,
+				CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */,
 				CCD0ED6C27F447C600E57F21 /* Assets.xcassets in Resources */,
 				CC25A37D27F74BB400FDA30B /* NameGameNewGameCollectionViewCell.xib in Resources */,
 				CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */,
@@ -388,6 +395,7 @@
 				CC1E253E27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift in Sources */,
 				CCA8185C27FBA4B000A8CBC6 /* GameCollectionReusableView.swift in Sources */,
 				CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */,
+				CC8225E127FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift in Sources */,
 				CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */,
 				CC25A37427F71D8900FDA30B /* NewGame.swift in Sources */,
 				CCD0ED7D27F44AA200E57F21 /* StorageManager.swift in Sources */,

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="GamePlayerPointCollectionViewCell" customModule="Forabet_Challenge" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="323" height="50"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZL-rA-L5G">
+                        <rect key="frame" x="16" y="14.5" width="175" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="175" id="NCf-2P-hY8"/>
+                            <constraint firstAttribute="height" constant="21" id="U9i-zJ-n2U"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="AvR-fw-cnm">
+                        <rect key="frame" x="203" y="14" width="104" height="22"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qe7-5C-z3D">
+                                <rect key="frame" x="0.0" y="0.0" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="N41-Rb-dQJ"/>
+                                    <constraint firstAttribute="width" constant="22" id="jyI-ym-SSA"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="oVB-Y9-YlY"/>
+                                    <constraint firstAttribute="height" constant="22" id="qj5-I0-4iJ"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="minus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="changePointsTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="MqN-Dz-oNc"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="333" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3fo-pa-MPB">
+                                <rect key="frame" x="32" y="0.0" width="40" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="7s7-Cf-m9k"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sva-MK-wRO">
+                                <rect key="frame" x="82" y="0.0" width="22" height="22"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="NNd-VN-9BZ"/>
+                                    <constraint firstAttribute="height" constant="22" id="VgJ-re-piZ"/>
+                                    <constraint firstAttribute="width" constant="22" id="X19-J1-NCQ"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="22" id="xf8-jg-tAY"/>
+                                </constraints>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="plus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="changePointsTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="RQL-rQ-eb5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="104" id="QCo-rQ-cwx"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="AvR-fw-cnm" secondAttribute="trailing" constant="16" id="5GK-Gl-ezy"/>
+                <constraint firstItem="pZL-rA-L5G" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="IDW-76-wf5"/>
+                <constraint firstItem="AvR-fw-cnm" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="TmY-aM-Cen"/>
+                <constraint firstItem="pZL-rA-L5G" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="16" id="slO-bl-oDs"/>
+            </constraints>
+            <size key="customSize" width="323" height="50"/>
+            <connections>
+                <outlet property="namePlayerLabel" destination="pZL-rA-L5G" id="KSG-F2-Tnh"/>
+                <outlet property="pointsLabel" destination="3fo-pa-MPB" id="Co7-6A-EKP"/>
+            </connections>
+            <point key="canvasLocation" x="335.50724637681162" y="60.9375"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="minus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+    </resources>
+</document>
