@@ -26,6 +26,9 @@ class GameCollectionViewController: UICollectionViewController {
         
         let playerPoinUinib = UINib(nibName: GamePlayerPointCollectionViewCell.id, bundle: nil)
         collectionView.register(playerPoinUinib, forCellWithReuseIdentifier: GamePlayerPointCollectionViewCell.id)
+        
+        let gameControllUinib = UINib(nibName: GameControllCollectionViewCell.id, bundle: nil)
+        collectionView.register(gameControllUinib, forCellWithReuseIdentifier: GameControllCollectionViewCell.id)
     }
 
     // MARK: UICollectionViewDataSource
@@ -37,27 +40,30 @@ class GameCollectionViewController: UICollectionViewController {
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         section == 1 ? game.players.count : 1
     }
-
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cellDefault = collectionView.dequeueReusableCell(withReuseIdentifier: GameConditionCollectionViewCell.id, for: indexPath)
+        let cellCondition = collectionView.dequeueReusableCell(withReuseIdentifier: GameConditionCollectionViewCell.id, for: indexPath) as! GameConditionCollectionViewCell
         
-        if indexPath.section == 0 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GameConditionCollectionViewCell.id, for: indexPath) as! GameConditionCollectionViewCell
-            cell.setupCell(game: game)
-            return cell
-        }
-        if indexPath.section == 1 {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GamePlayerPointCollectionViewCell.id, for: indexPath) as! GamePlayerPointCollectionViewCell
-            cell.delegate = self
-            cell.setupCell(idPlayer: indexPath.item,
-                           point: game.players[indexPath.item].points,
-                           namePlayer: game.players[indexPath.item].playerName)
-            return cell
-            
-        }
+        let cellPlayerPoint = collectionView.dequeueReusableCell(withReuseIdentifier: GamePlayerPointCollectionViewCell.id, for: indexPath) as! GamePlayerPointCollectionViewCell
         
-        return cellDefault
+        let cellGameControll = collectionView.dequeueReusableCell(withReuseIdentifier: GameControllCollectionViewCell.id, for: indexPath) as! GameControllCollectionViewCell
+        
+        switch indexPath.section {
+        case 0:
+            cellCondition.setupCell(game: game)
+            return cellCondition
+        case 1:
+            cellPlayerPoint.delegate = self
+            cellPlayerPoint.setupCell(idPlayer: indexPath.item,
+                                      point: game.players[indexPath.item].points,
+                                      namePlayer: game.players[indexPath.item].playerName)
+            return cellPlayerPoint
+        default:
+            cellGameControll.setupCell(game: game, playerCell: cellPlayerPoint)
+//            cellGameControll.playerDelegate = cellPlayerPoint
+            return cellGameControll
+        }
     }
     
     override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -90,6 +96,9 @@ extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
         }
         if indexPath.section == 1 {
             height = 50
+        }
+        if indexPath.section == 2 {
+            height = 280
         }
         return CGSize(width: width, height: height)
     }

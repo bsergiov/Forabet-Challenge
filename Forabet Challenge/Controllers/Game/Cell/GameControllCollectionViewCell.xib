@@ -61,10 +61,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="contollGameTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="ENf-AK-Xjx"/>
+                                            <action selector="contollGameTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="V8K-v2-TXh"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idy-RY-3uf">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="idy-RY-3uf">
                                         <rect key="frame" x="0.0" y="63" width="491" height="50"/>
                                         <color key="backgroundColor" red="0.078431372549019607" green="0.22352941176470587" blue="0.36862745098039218" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <constraints>
@@ -79,6 +79,9 @@
                                                 <integer key="value" value="10"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="contollGameTapped:" destination="gTV-IL-0wX" eventType="touchUpInside" id="Ks6-0y-U7l"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -98,7 +101,7 @@
             </constraints>
             <size key="customSize" width="523" height="280"/>
             <connections>
-                <outlet property="finishGameBtn" destination="idy-RY-3uf" id="oKI-Lx-p4N"/>
+                <outlet property="finishGameBtn" destination="idy-RY-3uf" id="jC9-2C-QZF"/>
                 <outlet property="startGameBtn" destination="zOT-xB-6HB" id="OQZ-1q-zUR"/>
                 <outlet property="timePanel" destination="Rk1-OY-fSr" id="v4N-iS-zbn"/>
                 <outlet property="timerLabel" destination="NB3-kQ-5iE" id="sUf-ic-e8U"/>

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol GamePlayerCellDelegate {
+    func statusGame(currentStatus: Bool)
+}
+
 class GamePlayerPointCollectionViewCell: UICollectionViewCell {
 
     static let id = "GamePlayerPointCollectionViewCell"
@@ -14,6 +18,9 @@ class GamePlayerPointCollectionViewCell: UICollectionViewCell {
     // MARK: - IB Outlets
     @IBOutlet weak var namePlayerLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
+    
+    @IBOutlet weak var minusButton: UIButton!
+    
     
     // MARK: - Public Properties
     var delegate: GameDelegate!
@@ -31,6 +38,7 @@ class GamePlayerPointCollectionViewCell: UICollectionViewCell {
         self.point = point
         namePlayerLabel.text = namePlayer
         pointsLabel.text = "\(point)"
+        
     }
     
     // MARK: - IB Action
@@ -50,4 +58,12 @@ class GamePlayerPointCollectionViewCell: UICollectionViewCell {
     }
     
 
+}
+
+extension GamePlayerPointCollectionViewCell: GamePlayerCellDelegate {
+    func statusGame(currentStatus: Bool) {
+        minusButton.isEnabled = true
+        pointsLabel.text = "\(currentStatus)"
+        print("tut status Button \(currentStatus)")
+    }
 }
