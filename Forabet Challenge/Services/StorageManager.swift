@@ -22,6 +22,25 @@ class StorageManager {
         }
     }
     
+    func update(_ game: GameModel, for time: Int) {
+        write {
+            game.timeGame = time
+        }
+    }
+    
+    func update(_ game: GameModel, currentStatus: Int) {
+        write {
+            game.currentStatusGame = currentStatus
+        }
+    }
+    
+    func delete(_ game: GameModel) {
+        write {
+            realm.delete(game.players)
+            realm.delete(game)
+        }
+    }
+    
     func fetchGame(completion: @escaping (Results<GameModel>) -> Void) {
         
         let games = realm.objects(GameModel.self)

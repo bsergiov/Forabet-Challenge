@@ -10,13 +10,18 @@ import UIKit
 protocol GameDelegate {
     func changedPlayerPoint(idPlayer: Int, point: Int)
     func changeStatusGame(currentStatus: Bool)
+    func changeTimer(statusTimer: Bool)
+    func finishGame()
 }
 
 class GameCollectionViewController: UICollectionViewController {
 
     // MARK: - Public Properties
     var game: GameModel!
+    
+    // MARK: - Private Properties
     private var statusButton = false
+    private var timer: Timer?
     
     // MARK: - Life Cicle
     override func viewDidLoad() {
@@ -89,6 +94,19 @@ class GameCollectionViewController: UICollectionViewController {
     }
 }
 
+// MARK: - Private Methodes
+extension GameCollectionViewController {
+    private func timerControled() {
+        if statusButton {
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [ unowned self] timer in
+                let newTime = self.game.timeGame - 1
+                StorageManager.shared.update(self.game, for: newTime)
+                self.collectionView.reloadData()
+            }
+        }
+    }
+}
+
 // MARK: - UICollectionViewDelegateFlowLayout
 extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -109,12 +127,28 @@ extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - GameDelegate
 extension GameCollectionViewController: GameDelegate {
+   
     func changeStatusGame(currentStatus: Bool) {
         statusButton.toggle()
+        if game.currentStatusGame == 0 {
+            StorageManager.shared.update(game, currentStatus: 1)
+        }
         collectionView.reloadData()
     }
     
     func changedPlayerPoint(idPlayer: Int, point: Int) {
         print("tut idPlayer: \(idPlayer) and point \(point)")
+    }
+    
+    func changeTimer(statusTimer: Bool) {
+        timerControled()
+        if !statusTimer {
+            timer?.invalidate()
+        }
+    }
+    
+    func finishGame() {
+        StorageManager.shared.delete(game)
+        navigationController?.popViewController(animated: true)
     }
 }

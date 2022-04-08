@@ -33,11 +33,15 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     @IBAction func contollGameTapped(_ sender: UIButton) {
         if  sender.titleLabel?.text == "Start" {
             delegate.changeStatusGame(currentStatus: true)
+            delegate.changeTimer(statusTimer: true)
         }
         if sender.titleLabel?.text == "Pause" {
             delegate.changeStatusGame(currentStatus: false)
+            delegate.changeTimer(statusTimer: false)
         }
-        
+        if sender.titleLabel?.text == "Finish Game" {
+            delegate.finishGame()
+        }
     }
     
     // MARK: - Public Methodes
@@ -46,6 +50,7 @@ class GameControllCollectionViewCell: UICollectionViewCell {
         timePanel.isHidden = game.typeGame == 1
         let titleStartButton = statusGame ? "Pause" : "Start"
         startGameBtn.setTitle(titleStartButton, for: .normal)
-        finishGameBtn.isHidden = !statusGame
+        finishGameBtn.isHidden = game.currentStatusGame == 0
+        timerLabel.text = "\(game.timeGame / 60) : \(game.timeGame % 60)"
     }
 }

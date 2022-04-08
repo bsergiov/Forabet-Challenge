@@ -109,7 +109,8 @@ extension ConditionCollectionViewCell {
         if minut == 0, seconds == 0 {
             return
         }
-        delegate.getTimeSettings(minut: minut, seconds: seconds)
+        let timeGame = minut * 60 + seconds
+        delegate.getTimeSettings(timeGame: timeGame)
         cancelTapped()
     }
     

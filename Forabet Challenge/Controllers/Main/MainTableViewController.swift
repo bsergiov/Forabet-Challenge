@@ -75,8 +75,8 @@ class MainTableViewController: UITableViewController {
 extension MainTableViewController {
     private func fetchDb() {
         StorageManager.shared.fetchGame { [weak self] results in
-            self?.completedGame = results.filter { !$0.isComleted }
-            self?.notCompletedGame = results.filter { $0.isComleted }
+            self?.completedGame = results.filter { $0.currentStatusGame == 0 }
+            self?.notCompletedGame = results.filter { $0.currentStatusGame == 1 || $0.currentStatusGame == 2 }
             DispatchQueue.main.async {
                 self?.tableView.reloadData()
             }

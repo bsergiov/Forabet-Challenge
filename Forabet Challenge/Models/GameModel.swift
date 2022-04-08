@@ -11,9 +11,8 @@ import RealmSwift
 class GameModel: Object {
     @Persisted var nameGame = ""
     @Persisted var typeGame = 0
-    @Persisted var isComleted = false
-    @Persisted var timeMinute = 0
-    @Persisted var timeSecond = 0
+    @Persisted var currentStatusGame = 0
+    @Persisted var timeGame = 0
     @Persisted var pointsMax = 0
     @Persisted var players: List<Player>
 }

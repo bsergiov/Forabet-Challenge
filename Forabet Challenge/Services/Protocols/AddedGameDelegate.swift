@@ -13,6 +13,6 @@ public protocol AddedGameDelegate : NSObjectProtocol {
     func getName(_ nameGame: String)
     func getPlayers(playerName: String, forId: Int)
     func getTypeGame(typeGame: Int)
-    func getTimeSettings(minut: Int, seconds: Int)
+    func getTimeSettings(timeGame: Int)
     func getPoints(points: Int)
 }

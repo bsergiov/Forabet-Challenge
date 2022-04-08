@@ -31,7 +31,7 @@ class MainActiveGameTableViewCell: UITableViewCell {
     func setupCellActiveGame(){
         nameGame.text = game.nameGame
         playersCount.text = "\(game.players.count)"
-        indicatorActive.isHidden = game.isComleted
+        indicatorActive.isHidden = !(game.currentStatusGame == 0)
     }
     
 }
