@@ -123,10 +123,10 @@ extension AddGameCollectionViewController: UICollectionViewDelegateFlowLayout {
 // MARK: -  AddedGameDelegate
 extension AddGameCollectionViewController: AddedGameDelegate {
     
-    func getTimeSettings(minut: Int, seconds: Int) {
-        game.timeMinute = minut
-        game.timeSecond = seconds
-        print("set min \(minut) and sec \(seconds)")
+    func getTimeSettings(timeGame: Int) {
+        game.timeGame = timeGame
+        
+        print("set min \(timeGame / 60) and sec \(timeGame % 60)")
     }
     
     func getPlayers(playerName: String, forId: Int) {
