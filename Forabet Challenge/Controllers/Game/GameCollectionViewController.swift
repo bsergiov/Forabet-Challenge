@@ -62,9 +62,9 @@ class GameCollectionViewController: UICollectionViewController {
                                       namePlayer: game.players[indexPath.item].playerName, statusButton: statusButton)
             return cellPlayerPoint
         default:
-            cellGameControll.setupCell(game: game, playerCell: cellPlayerPoint)
+            cellGameControll.setupCell(game: game, statusGame: statusButton)
             cellGameControll.delegate = self
-//            cellGameControll.playerDelegate = cellPlayerPoint
+            
             return cellGameControll
         }
     }

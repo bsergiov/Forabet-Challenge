@@ -22,28 +22,30 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Properties
     var delegate: GameDelegate!
     
+    
     // MARK: - Life Cicle
     override func awakeFromNib() {
         super.awakeFromNib()
-        finishGameBtn.isHidden = true
+        
     }
     
     // MARK: - IB Action
     @IBAction func contollGameTapped(_ sender: UIButton) {
         if  sender.titleLabel?.text == "Start" {
-            startGameBtn.setTitle("Stop game", for: .normal)
             delegate.changeStatusGame(currentStatus: true)
         }
-        if sender.titleLabel?.text == "Stop game" {
-            startGameBtn.setTitle("Start", for: .normal)
+        if sender.titleLabel?.text == "Pause" {
             delegate.changeStatusGame(currentStatus: false)
         }
         
     }
     
     // MARK: - Public Methodes
-    func setupCell(game: GameModel, playerCell: GamePlayerPointCollectionViewCell) {
+    func setupCell(game: GameModel, statusGame: Bool) {
 
         timePanel.isHidden = game.typeGame == 1
+        let titleStartButton = statusGame ? "Pause" : "Start"
+        startGameBtn.setTitle(titleStartButton, for: .normal)
+        finishGameBtn.isHidden = !statusGame
     }
 }
