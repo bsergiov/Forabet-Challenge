@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol MainDelegate {
+    func newGame()
+}
+
 class MainTableViewController: UITableViewController {
     
     // MARK: - Public Properties
@@ -69,6 +73,15 @@ class MainTableViewController: UITableViewController {
         vc.game = indexPath.section == 0 ? completedGame[indexPath.row] : notCompletedGame[indexPath.row]
         navigationController?.pushViewController(vc, animated: true)
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        print("tut go add prepare before optional \(segue.destination)")
+        guard let nc = segue.destination as? UINavigationController else { return }
+        
+        guard let vc = nc.topViewController as? AddGameCollectionViewController else { return }
+        print("tut go add prepare")
+        vc.delegate = self
+    }
 }
 
 // MARK: - Private Methodes
@@ -81,5 +94,12 @@ extension MainTableViewController {
                 self?.tableView.reloadData()
             }
         }
+    }
+}
+
+extension MainTableViewController: MainDelegate {
+    func newGame() {
+        fetchDb()
+        tableView.reloadData()
     }
 }
