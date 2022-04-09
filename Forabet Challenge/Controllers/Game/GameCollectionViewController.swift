@@ -98,7 +98,7 @@ class GameCollectionViewController: UICollectionViewController {
 extension GameCollectionViewController {
     private func timerControled() {
         if statusButton {
-            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [ unowned self] timer in
+            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [ unowned self ] timer in
                 let newTime = self.game.timeGame - 1
                 StorageManager.shared.update(self.game, for: newTime)
                 self.collectionView.reloadData()
@@ -137,6 +137,9 @@ extension GameCollectionViewController: GameDelegate {
     }
     
     func changedPlayerPoint(idPlayer: Int, point: Int) {
+        let player = game.players[idPlayer]
+        StorageManager.shared.update(player, point: point)
+//        collectionView.reloadData()
         print("tut idPlayer: \(idPlayer) and point \(point)")
     }
     
@@ -151,4 +154,6 @@ extension GameCollectionViewController: GameDelegate {
         StorageManager.shared.delete(game)
         navigationController?.popViewController(animated: true)
     }
+    
+    
 }
