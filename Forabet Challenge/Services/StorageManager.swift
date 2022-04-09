@@ -34,6 +34,12 @@ class StorageManager {
         }
     }
     
+    func update(_ player: Player, point: Int) {
+        write {
+            player.points = point
+        }
+    }
+    
     func delete(_ game: GameModel) {
         write {
             realm.delete(game.players)
