@@ -9,9 +9,12 @@ import UIKit
 
 class AddGameCollectionViewController: UICollectionViewController {
 
+    // MARK: - Public Properties
     var players: [Player] = [Player(), Player()]
     
     var game = GameModel()
+    
+    var delegate: MainDelegate!
     
     // MARK: - Life Cicle
     override func viewDidLoad() {
@@ -41,6 +44,7 @@ class AddGameCollectionViewController: UICollectionViewController {
             // storage logic
             game.players.insert(contentsOf: players, at: 0)
             StorageManager.shared.save(game)
+            delegate.newGame()
             dismiss(animated: true)
         }
     }
