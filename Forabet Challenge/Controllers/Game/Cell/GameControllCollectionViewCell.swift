@@ -32,12 +32,10 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     // MARK: - IB Action
     @IBAction func contollGameTapped(_ sender: UIButton) {
         if  sender.titleLabel?.text == "Start" {
-            delegate.changeStatusGame(currentStatus: true)
-            delegate.changeTimer(statusTimer: true)
+            delegate.changeStatusGame(currentStatus: 1)
         }
         if sender.titleLabel?.text == "Pause" {
-            delegate.changeStatusGame(currentStatus: false)
-            delegate.changeTimer(statusTimer: false)
+            delegate.changeStatusGame(currentStatus: 0)
         }
         if sender.titleLabel?.text == "Finish Game" {
             delegate.finishGame()

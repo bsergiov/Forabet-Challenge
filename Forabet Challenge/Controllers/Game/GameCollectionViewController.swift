@@ -9,7 +9,7 @@ import UIKit
 
 protocol GameDelegate {
     func changedPlayerPoint(idPlayer: Int, point: Int)
-    func changeStatusGame(currentStatus: Bool)
+    func changeStatusGame(currentStatus: Int)
     func changeTimer(statusTimer: Bool)
     func finishGame()
     func stopTimer()
@@ -97,17 +97,16 @@ class GameCollectionViewController: UICollectionViewController {
 // MARK: - Private Methodes
 extension GameCollectionViewController {
     private func timerControled() {
-        if statusButton {
-            timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [ unowned self ] timer in
-                if self.game.timeGame > 0 {
-                    let newTime = self.game.timeGame - 1
-                    StorageManager.shared.update(self.game, for: newTime)
-                    self.collectionView.reloadData()
-                } else {
-                    timer.invalidate()
-                    StorageManager.shared.update(self.game, currentStatus: 2)
-                    self.collectionView.reloadData()
-                }
+        
+        timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [ unowned self ] timer in
+            if game.timeGame > 0 {
+                let newTime = self.game.timeGame - 1
+                StorageManager.shared.update(self.game, for: newTime)
+                self.collectionView.reloadData()
+            } else {
+                timer.invalidate()
+                StorageManager.shared.update(self.game, currentStatus: 2)
+                self.collectionView.reloadData()
             }
         }
     }
@@ -134,17 +133,28 @@ extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
 // MARK: - GameDelegate
 extension GameCollectionViewController: GameDelegate {
     
-    func changeStatusGame(currentStatus: Bool) {
-        statusButton.toggle()
-        if game.currentStatusGame == 0 {
-            StorageManager.shared.update(game, currentStatus: 1)
+    func changeStatusGame(currentStatus: Int) {
+        
+        StorageManager.shared.update(game, currentStatus: currentStatus)
+        if game.typeGame != 1, currentStatus == 1 {
+            timerControled()
         }
         collectionView.reloadData()
     }
     
     func changedPlayerPoint(idPlayer: Int, point: Int) {
+        let curentPoint = game.players[idPlayer].points
+        
         let player = game.players[idPlayer]
-        StorageManager.shared.update(player, point: point)
+        StorageManager.shared.update(player, point: curentPoint + point)
+        
+        if game.typeGame != 0,
+           game.players[idPlayer].points >= game.pointsMax {
+            StorageManager.shared.update(game, currentStatus: 2)
+            timer?.invalidate()
+        }
+        
+        collectionView.reloadData()
     }
     
     func changeTimer(statusTimer: Bool) {

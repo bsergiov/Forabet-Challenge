@@ -22,39 +22,20 @@ class GamePlayerPointCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Properties
     var delegate: GameDelegate!
     var idPlayer: Int!
-    var point: Int!
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
+
     
     // MARK: - Public Methodes
     func setupCell(idPlayer: Int, player: Player, currentStatusGame: Int) {
         self.idPlayer = idPlayer
-        point = player.points
         namePlayerLabel.text = player.playerName
         pointsLabel.text = "\(player.points)"
         plusButton.isEnabled = currentStatusGame == 1
         minusButton.isEnabled = currentStatusGame == 1
-        
     }
     
     // MARK: - IB Action
     @IBAction func changePointsTapped(_ sender: UIButton) {
-        // minus
-        if sender.tag == 0 {
-            point -= 1
-            point = point < 0 ? 0 : point
-            
-        }
-        // plus
-        if sender.tag == 1 {
-            point += 1
-        }
+        let point = sender.tag == 0 ? -1 : 1
         delegate.changedPlayerPoint(idPlayer: idPlayer, point: point)
-        pointsLabel.text = "\(point ?? 0)"
     }
-    
-
 }
