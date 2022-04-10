@@ -12,6 +12,7 @@ protocol GameDelegate {
     func changeStatusGame(currentStatus: Bool)
     func changeTimer(statusTimer: Bool)
     func finishGame()
+    func stopTimer()
 }
 
 class GameCollectionViewController: UICollectionViewController {
@@ -67,9 +68,8 @@ class GameCollectionViewController: UICollectionViewController {
                                       namePlayer: game.players[indexPath.item].playerName, statusButton: statusButton)
             return cellPlayerPoint
         default:
-            cellGameControll.setupCell(game: game, statusGame: statusButton)
             cellGameControll.delegate = self
-            
+            cellGameControll.setupCell(game: game, statusGame: statusButton)
             return cellGameControll
         }
     }
@@ -127,7 +127,7 @@ extension GameCollectionViewController: UICollectionViewDelegateFlowLayout {
 
 // MARK: - GameDelegate
 extension GameCollectionViewController: GameDelegate {
-   
+    
     func changeStatusGame(currentStatus: Bool) {
         statusButton.toggle()
         if game.currentStatusGame == 0 {
@@ -139,8 +139,6 @@ extension GameCollectionViewController: GameDelegate {
     func changedPlayerPoint(idPlayer: Int, point: Int) {
         let player = game.players[idPlayer]
         StorageManager.shared.update(player, point: point)
-//        collectionView.reloadData()
-        print("tut idPlayer: \(idPlayer) and point \(point)")
     }
     
     func changeTimer(statusTimer: Bool) {
@@ -155,5 +153,10 @@ extension GameCollectionViewController: GameDelegate {
         navigationController?.popViewController(animated: true)
     }
     
-    
+    func stopTimer(){
+        timer?.invalidate()
+        statusButton = false
+        collectionView.reloadData()
+        
+    }
 }

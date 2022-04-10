@@ -47,10 +47,17 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Methodes
     func setupCell(game: GameModel, statusGame: Bool) {
 
+        
+        
         timePanel.isHidden = game.typeGame == 1
         let titleStartButton = statusGame ? "Pause" : "Start"
         startGameBtn.setTitle(titleStartButton, for: .normal)
         finishGameBtn.isHidden = game.currentStatusGame == 0
         timerLabel.text = "\(game.timeGame / 60) : \(game.timeGame % 60)"
+        if game.timeGame == 0, statusGame {
+            startGameBtn.isHidden = true
+            
+            delegate.stopTimer()
+        }
     }
 }
