@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class AddGameCollectionViewController: UICollectionViewController {
 
@@ -16,18 +17,14 @@ class AddGameCollectionViewController: UICollectionViewController {
     
     var delegate: MainDelegate!
     
+    // MARK: - IB Outlets
+    @IBOutlet weak var doneButton: UIBarButtonItem!
+    
     // MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let uiNibCondition = UINib(nibName: ConditionCollectionViewCell.id, bundle: nil)
-        collectionView.register(uiNibCondition, forCellWithReuseIdentifier: ConditionCollectionViewCell.id)
-        
-        let uiNibNameGame = UINib(nibName: NameGameNewGameCollectionViewCell.id, bundle: nil)
-        collectionView.register(uiNibNameGame, forCellWithReuseIdentifier: NameGameNewGameCollectionViewCell.id)
-        
-        let uiNibPlayer = UINib(nibName: PlayerNewGameCollectionViewCell.id, bundle: nil)
-        collectionView.register(uiNibPlayer, forCellWithReuseIdentifier: PlayerNewGameCollectionViewCell.id)
+        doneButton.isEnabled = false
+        registatedCell()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -51,8 +48,7 @@ class AddGameCollectionViewController: UICollectionViewController {
 
     // MARK: UICollectionViewDataSource
     override func numberOfSections(in collectionView: UICollectionView) -> Int {
-        
-        return 3
+         3
     }
 
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
@@ -112,6 +108,41 @@ class AddGameCollectionViewController: UICollectionViewController {
     }
 }
 
+// MARK: - Private Methodes
+extension AddGameCollectionViewController {
+    private func registatedCell() {
+        let uiNibCondition = UINib(nibName: ConditionCollectionViewCell.id, bundle: nil)
+        collectionView.register(uiNibCondition, forCellWithReuseIdentifier: ConditionCollectionViewCell.id)
+        
+        let uiNibNameGame = UINib(nibName: NameGameNewGameCollectionViewCell.id, bundle: nil)
+        collectionView.register(uiNibNameGame, forCellWithReuseIdentifier: NameGameNewGameCollectionViewCell.id)
+        
+        let uiNibPlayer = UINib(nibName: PlayerNewGameCollectionViewCell.id, bundle: nil)
+        collectionView.register(uiNibPlayer, forCellWithReuseIdentifier: PlayerNewGameCollectionViewCell.id)
+    }
+    
+    private func checkFields() {
+        doneButton.isEnabled = false
+        
+        for player in players {
+            if player.playerName.isEmpty { return }
+        }
+        
+        if game.nameGame.isEmpty { return }
+        
+        switch game.typeGame {
+        case 0:
+            if game.timeGame <= 0 { return }
+        case 1:
+            if game.pointsMax <= 0 { return }
+        default:
+            if game.timeGame <= 0 { return }
+            if game.pointsMax <= 0 { return }
+        }
+        doneButton.isEnabled = true
+    }
+}
+
 // MARK: - UICollectionViewDelegateFlowLayout
 extension AddGameCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
@@ -129,6 +160,7 @@ extension AddGameCollectionViewController: AddedGameDelegate {
     
     func getTimeSettings(timeGame: Int) {
         game.timeGame = timeGame
+        checkFields()
         
         print("set min \(timeGame / 60) and sec \(timeGame % 60)")
     }
@@ -137,22 +169,27 @@ extension AddGameCollectionViewController: AddedGameDelegate {
         // TODO доработать модель под время и таймер
         players[forId].playerName = playerName
         print("tut player name \(playerName) for id \(forId)")
+        checkFields()
     }
     
     func addPlayer() {
         players.append(Player())
         collectionView.reloadData()
+        checkFields()
     }
     
     func getTypeGame(typeGame: Int) {
         game.typeGame = typeGame
+        checkFields()
     }
     
     func getPoints(points: Int) {
         game.pointsMax = points
+        checkFields()
     }
     
     func getName(_ nameGame: String) {
         game.nameGame = nameGame
+        checkFields()
     }
 }
