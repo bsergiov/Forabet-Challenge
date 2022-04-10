@@ -30,13 +30,13 @@ class GamePlayerPointCollectionViewCell: UICollectionViewCell {
     }
     
     // MARK: - Public Methodes
-    func setupCell(idPlayer: Int, point: Int, namePlayer: String, statusButton: Bool) {
+    func setupCell(idPlayer: Int, player: Player, currentStatusGame: Int) {
         self.idPlayer = idPlayer
-        self.point = point
-        namePlayerLabel.text = namePlayer
-        pointsLabel.text = "\(point)"
-        plusButton.isEnabled = statusButton
-        minusButton.isEnabled = statusButton
+        point = player.points
+        namePlayerLabel.text = player.playerName
+        pointsLabel.text = "\(player.points)"
+        plusButton.isEnabled = currentStatusGame == 1
+        minusButton.isEnabled = currentStatusGame == 1
         
     }
     

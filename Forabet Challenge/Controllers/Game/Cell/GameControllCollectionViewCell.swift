@@ -46,18 +46,21 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Public Methodes
     func setupCell(game: GameModel, statusGame: Bool) {
-
-        
-        
+        /*
+         TODO здесь рисуем плашку с таймером в зависимости от типа игры
+         TODO рисуем тайтл и сост кнопки в зависимости от статуса игры
+         */
         timePanel.isHidden = game.typeGame == 1
-        let titleStartButton = statusGame ? "Pause" : "Start"
-        startGameBtn.setTitle(titleStartButton, for: .normal)
+        startGameBtn.isHidden = game.currentStatusGame == 2
         finishGameBtn.isHidden = game.currentStatusGame == 0
+        
+        let titleStartButton = game.currentStatusGame == 0 ? "Start" : "Pause"
+        startGameBtn.setTitle(titleStartButton, for: .normal)
+        
         timerLabel.text = "\(game.timeGame / 60) : \(game.timeGame % 60)"
-        if game.timeGame == 0, statusGame {
-            startGameBtn.isHidden = true
-            
-            delegate.stopTimer()
-        }
+    }
+    
+    private func setGameOne() {
+        
     }
 }

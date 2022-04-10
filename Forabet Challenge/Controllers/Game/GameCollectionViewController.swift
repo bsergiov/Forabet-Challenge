@@ -64,8 +64,8 @@ class GameCollectionViewController: UICollectionViewController {
         case 1:
             cellPlayerPoint.delegate = self
             cellPlayerPoint.setupCell(idPlayer: indexPath.item,
-                                      point: game.players[indexPath.item].points,
-                                      namePlayer: game.players[indexPath.item].playerName, statusButton: statusButton)
+                                      player: game.players[indexPath.row],
+                                      currentStatusGame: game.currentStatusGame)
             return cellPlayerPoint
         default:
             cellGameControll.delegate = self
@@ -99,9 +99,15 @@ extension GameCollectionViewController {
     private func timerControled() {
         if statusButton {
             timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [ unowned self ] timer in
-                let newTime = self.game.timeGame - 1
-                StorageManager.shared.update(self.game, for: newTime)
-                self.collectionView.reloadData()
+                if self.game.timeGame > 0 {
+                    let newTime = self.game.timeGame - 1
+                    StorageManager.shared.update(self.game, for: newTime)
+                    self.collectionView.reloadData()
+                } else {
+                    timer.invalidate()
+                    StorageManager.shared.update(self.game, currentStatus: 2)
+                    self.collectionView.reloadData()
+                }
             }
         }
     }
@@ -154,9 +160,7 @@ extension GameCollectionViewController: GameDelegate {
     }
     
     func stopTimer(){
-        timer?.invalidate()
         statusButton = false
         collectionView.reloadData()
-        
     }
 }
