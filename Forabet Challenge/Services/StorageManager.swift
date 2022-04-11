@@ -40,6 +40,12 @@ class StorageManager {
         }
     }
     
+    func update(forFavorite player: Player) {
+        write {
+            player.isFavorite = true
+        }
+    }
+    
     func delete(_ game: GameModel) {
         write {
             realm.delete(game.players)

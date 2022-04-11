@@ -18,6 +18,7 @@ class GamePlayerPointCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var minusButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     
+    @IBOutlet weak var favorImage: UIImageView!
     
     // MARK: - Public Properties
     var delegate: GameDelegate!
@@ -29,6 +30,7 @@ class GamePlayerPointCollectionViewCell: UICollectionViewCell {
         self.idPlayer = idPlayer
         namePlayerLabel.text = player.playerName
         pointsLabel.text = "\(player.points)"
+        favorImage.isHidden = !player.isFavorite
         plusButton.isEnabled = currentStatusGame == 1
         minusButton.isEnabled = currentStatusGame == 1
     }

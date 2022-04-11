@@ -100,15 +100,21 @@ extension GameCollectionViewController {
         
         timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { [ unowned self ] timer in
             if game.timeGame > 0 {
-                let newTime = self.game.timeGame - 1
-                StorageManager.shared.update(self.game, for: newTime)
-                self.collectionView.reloadData()
+                let newTime = game.timeGame - 1
+                StorageManager.shared.update(game, for: newTime)
+                collectionView.reloadData()
             } else {
                 timer.invalidate()
-                StorageManager.shared.update(self.game, currentStatus: 2)
-                self.collectionView.reloadData()
+                StorageManager.shared.update(game, currentStatus: 2)
+                setWinPlayer()
+                collectionView.reloadData()
             }
         }
+    }
+    
+    private func setWinPlayer() {
+        guard let favorPlayer = game.players.sorted(by: {$0.points > $1.points }).first else { return }
+        StorageManager.shared.update(forFavorite: favorPlayer)
     }
 }
 
@@ -152,6 +158,7 @@ extension GameCollectionViewController: GameDelegate {
            game.players[idPlayer].points >= game.pointsMax {
             StorageManager.shared.update(game, currentStatus: 2)
             timer?.invalidate()
+            setWinPlayer()
         }
         
         collectionView.reloadData()
