@@ -5,6 +5,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -99,6 +100,52 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rth-q9-Uy3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="4024.6376811594205" y="148.66071428571428"/>
+        </scene>
+        <!--Wv View Controller-->
+        <scene sceneID="PbD-x9-vLB">
+            <objects>
+                <viewController storyboardIdentifier="WvViewController" id="5Zp-xg-bWX" customClass="WvViewController" customModule="Forabet_Challenge" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EJb-bN-QoJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dsM-lY-V5P">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DDp-sH-fA2">
+                                <rect key="frame" x="0.0" y="852" width="414" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem title="back" id="wjw-tL-B6s"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="PYv-cq-fea"/>
+                                    <barButtonItem title="fresh" id="iv0-ma-8g1"/>
+                                </items>
+                            </toolbar>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6MT-5O-OZ6"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="dsM-lY-V5P" firstAttribute="leading" secondItem="6MT-5O-OZ6" secondAttribute="leading" id="4Wt-hT-EKI"/>
+                            <constraint firstItem="6MT-5O-OZ6" firstAttribute="bottom" secondItem="dsM-lY-V5P" secondAttribute="bottom" id="80Q-DC-dYo"/>
+                            <constraint firstItem="6MT-5O-OZ6" firstAttribute="trailing" secondItem="dsM-lY-V5P" secondAttribute="trailing" id="JhM-Gx-9Mf"/>
+                            <constraint firstItem="dsM-lY-V5P" firstAttribute="top" secondItem="6MT-5O-OZ6" secondAttribute="top" id="VmU-aZ-ayt"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="backButton" destination="wjw-tL-B6s" id="aei-hW-ZV5"/>
+                        <outlet property="refreshButton" destination="iv0-ma-8g1" id="ZOp-Yn-I3s"/>
+                        <outlet property="toolbar" destination="DDp-sH-fA2" id="s9S-2p-rxr"/>
+                        <outlet property="webV" destination="dsM-lY-V5P" id="pYa-lA-5Gh"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NLf-JV-fQD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5426" y="-242"/>
         </scene>
         <!--Add Game-->
         <scene sceneID="oCs-bf-Dbc">

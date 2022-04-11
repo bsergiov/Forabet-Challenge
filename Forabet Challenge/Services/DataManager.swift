@@ -9,9 +9,6 @@ import Foundation
 
 struct DataManager {
     
-    
-    
-    
     static func getTimeSettings() -> [[Int]] {
         var minuts: [Int] = []
         var seconds: [Int] = []
@@ -23,5 +20,10 @@ struct DataManager {
         }
 
         return [minuts, seconds]
+    }
+    
+    enum WorkPath: String {
+        case policy = "https://forabet-challenge.web.app/policy"
+        case terms = "https://forabet-challenge.web.app/terms"
     }
 }
