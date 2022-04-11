@@ -15,6 +15,6 @@ class AddedGameCollectionReusableView: UICollectionReusableView {
     var delegate: AddedGameDelegate!
     
     @IBAction func tappedAddPlayer() {
-        delegate.addPlayer()
+        delegate.addNewPlayer()
     } 
 }

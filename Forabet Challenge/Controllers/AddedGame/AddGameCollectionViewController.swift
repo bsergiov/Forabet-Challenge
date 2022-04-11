@@ -158,37 +158,33 @@ extension AddGameCollectionViewController: UICollectionViewDelegateFlowLayout {
 // MARK: -  AddedGameDelegate
 extension AddGameCollectionViewController: AddedGameDelegate {
     
-    func getTimeSettings(timeGame: Int) {
+    func setTimeSettings(timeGame: Int) {
         game.timeGame = timeGame
         checkFields()
-        
-        print("set min \(timeGame / 60) and sec \(timeGame % 60)")
     }
     
-    func getPlayers(playerName: String, forId: Int) {
-        // TODO доработать модель под время и таймер
+    func setPlayerName(playerName: String, forId: Int) {
         players[forId].playerName = playerName
-        print("tut player name \(playerName) for id \(forId)")
         checkFields()
     }
     
-    func addPlayer() {
+    func addNewPlayer() {
         players.append(Player())
         collectionView.reloadData()
         checkFields()
     }
     
-    func getTypeGame(typeGame: Int) {
+    func setTypeGame(typeGame: Int) {
         game.typeGame = typeGame
         checkFields()
     }
     
-    func getPoints(points: Int) {
+    func setGamePoints(points: Int) {
         game.pointsMax = points
         checkFields()
     }
     
-    func getName(_ nameGame: String) {
+    func setGameName(_ nameGame: String) {
         game.nameGame = nameGame
         checkFields()
     }

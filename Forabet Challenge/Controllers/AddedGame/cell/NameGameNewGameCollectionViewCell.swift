@@ -44,7 +44,7 @@ extension NameGameNewGameCollectionViewCell {
     @objc private func doneTapped() {
         guard let name = nameGameTf.text, !name.isEmpty else { return }
         
-        delegate.getName(name)
+        delegate.setGameName(name)
         cancelTapped()
     }
     
@@ -57,7 +57,7 @@ extension NameGameNewGameCollectionViewCell {
 extension NameGameNewGameCollectionViewCell: UITextFieldDelegate {
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        delegate.getName(textField.text ?? "")
+        delegate.setGameName(textField.text ?? "")
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         cancelTapped()

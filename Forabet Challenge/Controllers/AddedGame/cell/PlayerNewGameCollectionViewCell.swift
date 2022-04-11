@@ -60,7 +60,7 @@ extension PlayerNewGameCollectionViewCell {
 extension PlayerNewGameCollectionViewCell: UITextFieldDelegate {
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        delegate.getPlayers(playerName: textField.text ?? "", forId: cellId)
+        delegate.setPlayerName(playerName: textField.text ?? "", forId: cellId)
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
