@@ -8,17 +8,16 @@
 import Foundation
 
 struct DataManager {
-    
+    // for data picker
     static func getTimeSettings() -> [[Int]] {
         var minuts: [Int] = []
         var seconds: [Int] = []
-        for i in 1...45 {
-            minuts.append(i)
-        }
         for i in 1...60 {
+            if i <= 45 {
+                minuts.append(i)
+            }
             seconds.append(i)
         }
-
         return [minuts, seconds]
     }
     
