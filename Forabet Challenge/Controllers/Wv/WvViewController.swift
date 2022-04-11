@@ -9,10 +9,16 @@ import UIKit
 import WebKit
 
 class WvViewController: UIViewController {
-
+    
+    static let id = "WvViewController"
+    
     // MARK: - IB Outlets
     @IBOutlet weak var webV: WKWebView!
-    @IBOutlet weak var toolbar: UIToolbar!
+    @IBOutlet weak var toolbar: UIToolbar! {
+        didSet {
+            toolbar.isHidden = true
+        }
+    }
     @IBOutlet weak var backButton: UIBarButtonItem!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
     

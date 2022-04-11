@@ -28,7 +28,7 @@
 		CC7530FD27FEE8650085BCC1 /* GameControllCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7530FB27FEE8650085BCC1 /* GameControllCollectionViewCell.swift */; };
 		CC7530FE27FEE8650085BCC1 /* GameControllCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7530FC27FEE8650085BCC1 /* GameControllCollectionViewCell.xib */; };
 		CC75310128041F9F0085BCC1 /* WvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75310028041F9F0085BCC1 /* WvViewController.swift */; };
-		CC7531042804345F0085BCC1 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7531032804345F0085BCC1 /* SettingsViewController.swift */; };
+		CC753106280438B70085BCC1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC753105280438B70085BCC1 /* SettingsTableViewController.swift */; };
 		CC8225E127FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */; };
 		CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
@@ -67,7 +67,7 @@
 		CC7530FB27FEE8650085BCC1 /* GameControllCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameControllCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC7530FC27FEE8650085BCC1 /* GameControllCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameControllCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC75310028041F9F0085BCC1 /* WvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WvViewController.swift; sourceTree = "<group>"; };
-		CC7531032804345F0085BCC1 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		CC753105280438B70085BCC1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamePlayerPointCollectionViewCell.xib; sourceTree = "<group>"; };
 		CCA0362927F4DFD60041C702 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 		CC7531022804334D0085BCC1 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				CC7531032804345F0085BCC1 /* SettingsViewController.swift */,
+				CC753105280438B70085BCC1 /* SettingsTableViewController.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -256,11 +256,11 @@
 		CCD0ED7827F4487700E57F21 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				CC7531022804334D0085BCC1 /* Settings */,
-				CC7530FF28041F670085BCC1 /* Wv */,
+				CC25A38427FB4E6A00FDA30B /* Main */,
 				CC25A38727FB51CC00FDA30B /* Game */,
 				CC25A38527FB4E7900FDA30B /* AddedGame */,
-				CC25A38427FB4E6A00FDA30B /* Main */,
+				CC7531022804334D0085BCC1 /* Settings */,
+				CC7530FF28041F670085BCC1 /* Wv */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -428,8 +428,8 @@
 				CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */,
 				CC25A37427F71D8900FDA30B /* NewGame.swift in Sources */,
 				CCD0ED7D27F44AA200E57F21 /* StorageManager.swift in Sources */,
-				CC7531042804345F0085BCC1 /* SettingsViewController.swift in Sources */,
 				CC1E253B27FB53E2002AA8F3 /* GameCollectionViewController.swift in Sources */,
+				CC753106280438B70085BCC1 /* SettingsTableViewController.swift in Sources */,
 				CC25A38027F7512000FDA30B /* PlayerNewGameCollectionViewCell.swift in Sources */,
 				CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */,
 				CC25A37227F7154100FDA30B /* AddedGameCollectionReusableView.swift in Sources */,

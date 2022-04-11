@@ -145,6 +145,9 @@ extension GameCollectionViewController: GameDelegate {
         if game.typeGame != 1, currentStatus == 1 {
             timerControled()
         }
+        if currentStatus == 0 {
+            timer?.invalidate()
+        }
         collectionView.reloadData()
     }
     

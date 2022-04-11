@@ -23,7 +23,6 @@ class MainTableViewController: UITableViewController {
     // MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let cellMainActiveGameTableViewCell = UINib(nibName: "MainActiveGameTableViewCell", bundle: nil)
         tableView.register(cellMainActiveGameTableViewCell, forCellReuseIdentifier: "mainActiveGameTableViewCell")
         tableView.separatorStyle = .none
@@ -56,7 +55,7 @@ class MainTableViewController: UITableViewController {
         case 0:
             return "Active"
         case 1:
-            return "None Active"
+            return "Completed"
         default:
             return nil
         }

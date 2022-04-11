@@ -26,11 +26,11 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 : 12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NB3-kQ-5iE">
                                         <rect key="frame" x="204.5" y="32" width="82.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" red="0.44705882352941173" green="0.9137254901960784" blue="0.3411764705882353" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="backgroundColor" red="0.12156862745098039" green="0.18823529411764706" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="NB3-kQ-5iE" firstAttribute="centerY" secondItem="Rk1-OY-fSr" secondAttribute="centerY" id="4lO-r0-jIg"/>
                                     <constraint firstItem="NB3-kQ-5iE" firstAttribute="centerX" secondItem="Rk1-OY-fSr" secondAttribute="centerX" id="FKl-hu-h49"/>
