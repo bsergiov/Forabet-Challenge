@@ -22,13 +22,6 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     // MARK: - Public Properties
     var delegate: GameDelegate!
     
-    
-    // MARK: - Life Cicle
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-    }
-    
     // MARK: - IB Action
     @IBAction func contollGameTapped(_ sender: UIButton) {
         if  sender.titleLabel?.text == "Start" {
@@ -44,7 +37,7 @@ class GameControllCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Public Methodes
     func setupCell(game: GameModel, statusGame: Bool) {
-       
+        
         timePanel.isHidden = game.typeGame == 1
         startGameBtn.isHidden = game.currentStatusGame == 2
         finishGameBtn.isHidden = game.currentStatusGame == 0
@@ -52,6 +45,16 @@ class GameControllCollectionViewCell: UICollectionViewCell {
         let titleStartButton = game.currentStatusGame == 0 ? "Start" : "Pause"
         startGameBtn.setTitle(titleStartButton, for: .normal)
         
-        timerLabel.text = "\(game.timeGame / 60) : \(game.timeGame % 60)"
+        let minute = getFormatInt(for: (game.timeGame / 60))
+        let seconds = getFormatInt(for: (game.timeGame % 60))
+        
+        timerLabel.text = "\(minute) : \(seconds)"
+    }
+    
+    // MARK: -  Private Methodes
+    private func getFormatInt(for number: Int) -> String {
+        (0...9).contains(number)
+        ? "0\(number)"
+        : "\(number)"
     }
 }
