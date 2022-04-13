@@ -70,7 +70,7 @@ class ConditionCollectionViewCell: UICollectionViewCell {
             timeTf.isHidden = false
             descriptionLabel.text = DescriptionCondition.timeAndPoint.rawValue
         }
-        delegate.getTypeGame(typeGame: sender.selectedSegmentIndex)
+        delegate.setTypeGame(typeGame: sender.selectedSegmentIndex)
     }
 }
 
@@ -101,7 +101,7 @@ extension ConditionCollectionViewCell {
     @objc private func doneTappedPoint() {
         guard let points = Int(pointsTf.text ?? ""), points > 0 else { return }
         
-        delegate.getPoints(points: points)
+        delegate.setGamePoints(points: points)
         cancelTapped()
     }
     
@@ -110,7 +110,7 @@ extension ConditionCollectionViewCell {
             return
         }
         let timeGame = minut * 60 + seconds
-        delegate.getTimeSettings(timeGame: timeGame)
+        delegate.setTimeSettings(timeGame: timeGame)
         cancelTapped()
     }
     
@@ -124,7 +124,7 @@ extension ConditionCollectionViewCell: UITextFieldDelegate {
         switch textField {
         case pointsTf:
             guard let maxPoints = Int(textField.text ?? "") else { return }
-            delegate.getPoints(points: maxPoints)
+            delegate.setGamePoints(points: maxPoints)
         default:
             break
         }

@@ -10,9 +10,7 @@ import UIKit
 protocol GameDelegate {
     func changedPlayerPoint(idPlayer: Int, point: Int)
     func changeStatusGame(currentStatus: Int)
-    func changeTimer(statusTimer: Bool)
     func finishGame()
-    func stopTimer()
 }
 
 class GameCollectionViewController: UICollectionViewController {
@@ -167,20 +165,8 @@ extension GameCollectionViewController: GameDelegate {
         collectionView.reloadData()
     }
     
-    func changeTimer(statusTimer: Bool) {
-        timerControled()
-        if !statusTimer {
-            timer?.invalidate()
-        }
-    }
-    
     func finishGame() {
         StorageManager.shared.delete(game)
         navigationController?.popViewController(animated: true)
-    }
-    
-    func stopTimer(){
-        statusButton = false
-        collectionView.reloadData()
     }
 }

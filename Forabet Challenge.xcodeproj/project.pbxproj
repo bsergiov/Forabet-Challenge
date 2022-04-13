@@ -17,7 +17,7 @@
 		CC25A36E27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A36C27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib */; };
 		CC25A37027F7039B00FDA30B /* AddGameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A36F27F7039A00FDA30B /* AddGameCollectionViewController.swift */; };
 		CC25A37227F7154100FDA30B /* AddedGameCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A37127F7154100FDA30B /* AddedGameCollectionReusableView.swift */; };
-		CC25A37427F71D8900FDA30B /* NewGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A37327F71D8900FDA30B /* NewGame.swift */; };
+		CC25A37427F71D8900FDA30B /* WorkTargetModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A37327F71D8900FDA30B /* WorkTargetModel.swift */; };
 		CC25A37827F724EB00FDA30B /* ConditionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A37627F724EB00FDA30B /* ConditionCollectionViewCell.swift */; };
 		CC25A37927F724EB00FDA30B /* ConditionCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC25A37727F724EB00FDA30B /* ConditionCollectionViewCell.xib */; };
 		CC25A37C27F74BB400FDA30B /* NameGameNewGameCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC25A37A27F74BB300FDA30B /* NameGameNewGameCollectionViewCell.swift */; };
@@ -29,6 +29,11 @@
 		CC7530FE27FEE8650085BCC1 /* GameControllCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7530FC27FEE8650085BCC1 /* GameControllCollectionViewCell.xib */; };
 		CC75310128041F9F0085BCC1 /* WvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75310028041F9F0085BCC1 /* WvViewController.swift */; };
 		CC753106280438B70085BCC1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC753105280438B70085BCC1 /* SettingsTableViewController.swift */; };
+		CC7531302806C6A00085BCC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC75312F2806C69F0085BCC1 /* GoogleService-Info.plist */; };
+		CC7531332806C82B0085BCC1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531322806C82B0085BCC1 /* FirebaseAnalytics */; };
+		CC7531352806C82B0085BCC1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */; };
+		CC7531372806C82B0085BCC1 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */; };
+		CC75313A2806D9400085BCC1 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531392806D9400085BCC1 /* AppsFlyerLib */; };
 		CC8225E127FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */; };
 		CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
@@ -41,7 +46,36 @@
 		CCD0ED6F27F447C600E57F21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CCD0ED6D27F447C600E57F21 /* LaunchScreen.storyboard */; };
 		CCD0ED7D27F44AA200E57F21 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED7C27F44AA200E57F21 /* StorageManager.swift */; };
 		CCD0ED7F27F44B3500E57F21 /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCD0ED7E27F44B3500E57F21 /* GameModel.swift */; };
+		CCFC748E2806FDF400DEA7F3 /* ParserName.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC748D2806FDF400DEA7F3 /* ParserName.swift */; };
+		CCFC7490280707B700DEA7F3 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC748F280707B700DEA7F3 /* NetworkManager.swift */; };
+		CCFC7498280720D600DEA7F3 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCFC7497280720D600DEA7F3 /* NotificationService.swift */; };
+		CCFC749C280720D600DEA7F3 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = CCFC7495280720D600DEA7F3 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		CCFC74A3280721AD00DEA7F3 /* OneSignal in Frameworks */ = {isa = PBXBuildFile; productRef = CCFC74A2280721AD00DEA7F3 /* OneSignal */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CCFC749A280720D600DEA7F3 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CCD0ED5727F447C400E57F21 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CCFC7494280720D600DEA7F3;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CCFC74A0280720D600DEA7F3 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				CCFC749C280720D600DEA7F3 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		38E6954C7C9BAD2052990BA4 /* Pods_Forabet_Challenge.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Forabet_Challenge.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -56,7 +90,7 @@
 		CC25A36C27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainNonActiveTableViewCell.xib; sourceTree = "<group>"; };
 		CC25A36F27F7039A00FDA30B /* AddGameCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddGameCollectionViewController.swift; sourceTree = "<group>"; };
 		CC25A37127F7154100FDA30B /* AddedGameCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddedGameCollectionReusableView.swift; sourceTree = "<group>"; };
-		CC25A37327F71D8900FDA30B /* NewGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGame.swift; sourceTree = "<group>"; };
+		CC25A37327F71D8900FDA30B /* WorkTargetModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkTargetModel.swift; sourceTree = "<group>"; };
 		CC25A37627F724EB00FDA30B /* ConditionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC25A37727F724EB00FDA30B /* ConditionCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ConditionCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC25A37A27F74BB300FDA30B /* NameGameNewGameCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGameNewGameCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -68,6 +102,7 @@
 		CC7530FC27FEE8650085BCC1 /* GameControllCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameControllCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC75310028041F9F0085BCC1 /* WvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WvViewController.swift; sourceTree = "<group>"; };
 		CC753105280438B70085BCC1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		CC75312F2806C69F0085BCC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamePlayerPointCollectionViewCell.xib; sourceTree = "<group>"; };
 		CCA0362927F4DFD60041C702 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -82,6 +117,12 @@
 		CCD0ED7027F447C600E57F21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CCD0ED7C27F44AA200E57F21 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		CCD0ED7E27F44B3500E57F21 /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		CCFC748D2806FDF400DEA7F3 /* ParserName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParserName.swift; sourceTree = "<group>"; };
+		CCFC748F280707B700DEA7F3 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		CCFC7495280720D600DEA7F3 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		CCFC7497280720D600DEA7F3 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		CCFC7499280720D600DEA7F3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCFC74A4280722F800DEA7F3 /* Forabet Challenge.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Forabet Challenge.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +130,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7531352806C82B0085BCC1 /* FirebaseRemoteConfig in Frameworks */,
+				CC75313A2806D9400085BCC1 /* AppsFlyerLib in Frameworks */,
+				CC7531372806C82B0085BCC1 /* FirebaseRemoteConfigSwift in Frameworks */,
+				CC7531332806C82B0085BCC1 /* FirebaseAnalytics in Frameworks */,
 				138263AB3FEB03F168F242C8 /* Pods_Forabet_Challenge.framework in Frameworks */,
+				CCFC74A3280721AD00DEA7F3 /* OneSignal in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCFC7492280720D600DEA7F3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -182,6 +235,14 @@
 			path = Settings;
 			sourceTree = "<group>";
 		};
+		CC75313B2806FCB00085BCC1 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC748D2806FDF400DEA7F3 /* ParserName.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		CCA8183727FA49A300A8CBC6 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
@@ -207,6 +268,7 @@
 			isa = PBXGroup;
 			children = (
 				CCD0ED6127F447C400E57F21 /* Forabet Challenge */,
+				CCFC7496280720D600DEA7F3 /* OneSignalNotificationServiceExtension */,
 				CCD0ED6027F447C400E57F21 /* Products */,
 				7067A24268D8EB44F3D84F58 /* Pods */,
 				BA2D1C0A9F9862ED0EA28D4C /* Frameworks */,
@@ -217,6 +279,7 @@
 			isa = PBXGroup;
 			children = (
 				CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */,
+				CCFC7495280720D600DEA7F3 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -224,6 +287,7 @@
 		CCD0ED6127F447C400E57F21 /* Forabet Challenge */ = {
 			isa = PBXGroup;
 			children = (
+				CCFC74A4280722F800DEA7F3 /* Forabet Challenge.entitlements */,
 				CCD0ED7827F4487700E57F21 /* Controllers */,
 				CCD0ED7727F4486A00E57F21 /* Storyboards */,
 				CCD0ED7B27F4489B00E57F21 /* Services */,
@@ -240,6 +304,7 @@
 				CCD0ED6227F447C400E57F21 /* AppDelegate.swift */,
 				CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */,
 				CCD0ED7027F447C600E57F21 /* Info.plist */,
+				CC75312F2806C69F0085BCC1 /* GoogleService-Info.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -277,7 +342,7 @@
 			isa = PBXGroup;
 			children = (
 				CCD0ED7E27F44B3500E57F21 /* GameModel.swift */,
-				CC25A37327F71D8900FDA30B /* NewGame.swift */,
+				CC25A37327F71D8900FDA30B /* WorkTargetModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -285,11 +350,22 @@
 		CCD0ED7B27F4489B00E57F21 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				CC75313B2806FCB00085BCC1 /* Helpers */,
 				CCA8183727FA49A300A8CBC6 /* Protocols */,
 				CCD0ED7C27F44AA200E57F21 /* StorageManager.swift */,
 				CC25A38227FB007100FDA30B /* DataManager.swift */,
+				CCFC748F280707B700DEA7F3 /* NetworkManager.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		CCFC7496280720D600DEA7F3 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				CCFC7497280720D600DEA7F3 /* NotificationService.swift */,
+				CCFC7499280720D600DEA7F3 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,15 +380,41 @@
 				CCD0ED5C27F447C400E57F21 /* Frameworks */,
 				CCD0ED5D27F447C400E57F21 /* Resources */,
 				290CF80C87237C984F832983 /* [CP] Embed Pods Frameworks */,
+				CCFC74A0280720D600DEA7F3 /* Embed App Extensions */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CCFC749B280720D600DEA7F3 /* PBXTargetDependency */,
+			);
+			name = "Forabet Challenge";
+			packageProductDependencies = (
+				CC7531322806C82B0085BCC1 /* FirebaseAnalytics */,
+				CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */,
+				CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */,
+				CC7531392806D9400085BCC1 /* AppsFlyerLib */,
+				CCFC74A2280721AD00DEA7F3 /* OneSignal */,
+			);
+			productName = "Forabet Challenge";
+			productReference = CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CCFC7494280720D600DEA7F3 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CCFC749D280720D600DEA7F3 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				CCFC7491280720D600DEA7F3 /* Sources */,
+				CCFC7492280720D600DEA7F3 /* Frameworks */,
+				CCFC7493280720D600DEA7F3 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "Forabet Challenge";
-			productName = "Forabet Challenge";
-			productReference = CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */;
-			productType = "com.apple.product-type.application";
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = CCFC7495280720D600DEA7F3 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -327,6 +429,9 @@
 					CCD0ED5E27F447C400E57F21 = {
 						CreatedOnToolsVersion = 13.3;
 					};
+					CCFC7494280720D600DEA7F3 = {
+						CreatedOnToolsVersion = 13.3;
+					};
 				};
 			};
 			buildConfigurationList = CCD0ED5A27F447C400E57F21 /* Build configuration list for PBXProject "Forabet Challenge" */;
@@ -338,11 +443,17 @@
 				Base,
 			);
 			mainGroup = CCD0ED5627F447C400E57F21;
+			packageReferences = (
+				CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CC7531382806D9400085BCC1 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
+				CCFC74A1280721AC00DEA7F3 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */,
+			);
 			productRefGroup = CCD0ED6027F447C400E57F21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				CCD0ED5E27F447C400E57F21 /* Forabet Challenge */,
+				CCFC7494280720D600DEA7F3 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -356,6 +467,7 @@
 				CC25A38127F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib in Resources */,
 				CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */,
 				CCD0ED6C27F447C600E57F21 /* Assets.xcassets in Resources */,
+				CC7531302806C6A00085BCC1 /* GoogleService-Info.plist in Resources */,
 				CC25A37D27F74BB400FDA30B /* NameGameNewGameCollectionViewCell.xib in Resources */,
 				CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */,
 				CC25A36E27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib in Resources */,
@@ -363,6 +475,13 @@
 				CC1E253F27FC408F002AA8F3 /* GameConditionCollectionViewCell.xib in Resources */,
 				CC7530FE27FEE8650085BCC1 /* GameControllCollectionViewCell.xib in Resources */,
 				CCD0ED6A27F447C400E57F21 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CCFC7493280720D600DEA7F3 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -422,11 +541,13 @@
 				CCD0ED6327F447C400E57F21 /* AppDelegate.swift in Sources */,
 				CCD0ED6527F447C400E57F21 /* SceneDelegate.swift in Sources */,
 				CC1E253E27FC408F002AA8F3 /* GameConditionCollectionViewCell.swift in Sources */,
+				CCFC748E2806FDF400DEA7F3 /* ParserName.swift in Sources */,
 				CCA8185C27FBA4B000A8CBC6 /* GameCollectionReusableView.swift in Sources */,
 				CC25A36D27F5A2F200FDA30B /* MainNonActiveTableViewCell.swift in Sources */,
 				CC8225E127FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift in Sources */,
 				CC25A36927F5A2C200FDA30B /* MainActiveGameTableViewCell.swift in Sources */,
-				CC25A37427F71D8900FDA30B /* NewGame.swift in Sources */,
+				CCFC7490280707B700DEA7F3 /* NetworkManager.swift in Sources */,
+				CC25A37427F71D8900FDA30B /* WorkTargetModel.swift in Sources */,
 				CCD0ED7D27F44AA200E57F21 /* StorageManager.swift in Sources */,
 				CC1E253B27FB53E2002AA8F3 /* GameCollectionViewController.swift in Sources */,
 				CC753106280438B70085BCC1 /* SettingsTableViewController.swift in Sources */,
@@ -440,7 +561,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CCFC7491280720D600DEA7F3 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CCFC7498280720D600DEA7F3 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CCFC749B280720D600DEA7F3 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CCFC7494280720D600DEA7F3 /* OneSignalNotificationServiceExtension */;
+			targetProxy = CCFC749A280720D600DEA7F3 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CCD0ED6827F447C400E57F21 /* Main.storyboard */ = {
@@ -580,10 +717,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 606389C5A93A9049959F3311 /* Pods-Forabet Challenge.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Forabet Challenge/Forabet Challenge.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Forabet Challenge/SupportFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -596,7 +736,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.choose.Forabet-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -609,10 +749,13 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 39336EBF8F5ED99C78CA3472 /* Pods-Forabet Challenge.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Forabet Challenge/Forabet Challenge.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Forabet Challenge/SupportFiles/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -625,12 +768,62 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.choose.Forabet-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		CCFC749E280720D600DEA7F3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.choose.Forabet-Challenge.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CCFC749F280720D600DEA7F3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = OneSignalNotificationServiceExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.choose.Forabet-Challenge.OneSignalNotificationServiceExtension";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -655,7 +848,71 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+		CCFC749D280720D600DEA7F3 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CCFC749E280720D600DEA7F3 /* Debug */,
+				CCFC749F280720D600DEA7F3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		CC7531382806D9400085BCC1 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		CCFC74A1280721AC00DEA7F3 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OneSignal/OneSignal-XCFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC7531322806C82B0085BCC1 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+		CC7531392806D9400085BCC1 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531382806D9400085BCC1 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
+		};
+		CCFC74A2280721AD00DEA7F3 /* OneSignal */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CCFC74A1280721AC00DEA7F3 /* XCRemoteSwiftPackageReference "OneSignal-XCFramework" */;
+			productName = OneSignal;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCD0ED5727F447C400E57F21 /* Project object */;
 }

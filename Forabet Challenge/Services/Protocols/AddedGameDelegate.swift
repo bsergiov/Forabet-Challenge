@@ -9,10 +9,10 @@ import Foundation
 
 public protocol AddedGameDelegate : NSObjectProtocol {
     
-    func addPlayer()
-    func getName(_ nameGame: String)
-    func getPlayers(playerName: String, forId: Int)
-    func getTypeGame(typeGame: Int)
-    func getTimeSettings(timeGame: Int)
-    func getPoints(points: Int)
+    func addNewPlayer()
+    func setGameName(_ nameGame: String)
+    func setPlayerName(playerName: String, forId: Int)
+    func setTypeGame(typeGame: Int)
+    func setTimeSettings(timeGame: Int)
+    func setGamePoints(points: Int)
 }
