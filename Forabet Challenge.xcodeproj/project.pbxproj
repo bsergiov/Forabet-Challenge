@@ -29,6 +29,10 @@
 		CC7530FE27FEE8650085BCC1 /* GameControllCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC7530FC27FEE8650085BCC1 /* GameControllCollectionViewCell.xib */; };
 		CC75310128041F9F0085BCC1 /* WvViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC75310028041F9F0085BCC1 /* WvViewController.swift */; };
 		CC753106280438B70085BCC1 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC753105280438B70085BCC1 /* SettingsTableViewController.swift */; };
+		CC7531302806C6A00085BCC1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = CC75312F2806C69F0085BCC1 /* GoogleService-Info.plist */; };
+		CC7531332806C82B0085BCC1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531322806C82B0085BCC1 /* FirebaseAnalytics */; };
+		CC7531352806C82B0085BCC1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */; };
+		CC7531372806C82B0085BCC1 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */; };
 		CC8225E127FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */; };
 		CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
@@ -68,6 +72,7 @@
 		CC7530FC27FEE8650085BCC1 /* GameControllCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GameControllCollectionViewCell.xib; sourceTree = "<group>"; };
 		CC75310028041F9F0085BCC1 /* WvViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WvViewController.swift; sourceTree = "<group>"; };
 		CC753105280438B70085BCC1 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		CC75312F2806C69F0085BCC1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayerPointCollectionViewCell.swift; sourceTree = "<group>"; };
 		CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GamePlayerPointCollectionViewCell.xib; sourceTree = "<group>"; };
 		CCA0362927F4DFD60041C702 /* MainTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTableViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +94,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC7531352806C82B0085BCC1 /* FirebaseRemoteConfig in Frameworks */,
+				CC7531372806C82B0085BCC1 /* FirebaseRemoteConfigSwift in Frameworks */,
+				CC7531332806C82B0085BCC1 /* FirebaseAnalytics in Frameworks */,
 				138263AB3FEB03F168F242C8 /* Pods_Forabet_Challenge.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -240,6 +248,7 @@
 				CCD0ED6227F447C400E57F21 /* AppDelegate.swift */,
 				CCD0ED6427F447C400E57F21 /* SceneDelegate.swift */,
 				CCD0ED7027F447C600E57F21 /* Info.plist */,
+				CC75312F2806C69F0085BCC1 /* GoogleService-Info.plist */,
 			);
 			path = SupportFiles;
 			sourceTree = "<group>";
@@ -310,6 +319,11 @@
 			dependencies = (
 			);
 			name = "Forabet Challenge";
+			packageProductDependencies = (
+				CC7531322806C82B0085BCC1 /* FirebaseAnalytics */,
+				CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */,
+				CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */,
+			);
 			productName = "Forabet Challenge";
 			productReference = CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */;
 			productType = "com.apple.product-type.application";
@@ -338,6 +352,9 @@
 				Base,
 			);
 			mainGroup = CCD0ED5627F447C400E57F21;
+			packageReferences = (
+				CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = CCD0ED6027F447C400E57F21 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -356,6 +373,7 @@
 				CC25A38127F7512000FDA30B /* PlayerNewGameCollectionViewCell.xib in Resources */,
 				CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */,
 				CCD0ED6C27F447C600E57F21 /* Assets.xcassets in Resources */,
+				CC7531302806C6A00085BCC1 /* GoogleService-Info.plist in Resources */,
 				CC25A37D27F74BB400FDA30B /* NameGameNewGameCollectionViewCell.xib in Resources */,
 				CC25A36A27F5A2C200FDA30B /* MainActiveGameTableViewCell.xib in Resources */,
 				CC25A36E27F5A2F200FDA30B /* MainNonActiveTableViewCell.xib in Resources */,
@@ -596,7 +614,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.choose.Forabet-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -625,7 +643,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 2.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.choose.Forabet-Challenge";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -656,6 +674,35 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		CC7531322806C82B0085BCC1 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfig;
+		};
+		CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseRemoteConfigSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CCD0ED5727F447C400E57F21 /* Project object */;
 }
