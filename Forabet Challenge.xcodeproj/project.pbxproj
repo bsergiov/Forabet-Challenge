@@ -33,6 +33,7 @@
 		CC7531332806C82B0085BCC1 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531322806C82B0085BCC1 /* FirebaseAnalytics */; };
 		CC7531352806C82B0085BCC1 /* FirebaseRemoteConfig in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */; };
 		CC7531372806C82B0085BCC1 /* FirebaseRemoteConfigSwift in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */; };
+		CC75313A2806D9400085BCC1 /* AppsFlyerLib in Frameworks */ = {isa = PBXBuildFile; productRef = CC7531392806D9400085BCC1 /* AppsFlyerLib */; };
 		CC8225E127FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC8225DF27FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.swift */; };
 		CC8225E227FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC8225E027FDEC91003C6DB1 /* GamePlayerPointCollectionViewCell.xib */; };
 		CCA0362A27F4DFD60041C702 /* MainTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCA0362927F4DFD60041C702 /* MainTableViewController.swift */; };
@@ -95,6 +96,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7531352806C82B0085BCC1 /* FirebaseRemoteConfig in Frameworks */,
+				CC75313A2806D9400085BCC1 /* AppsFlyerLib in Frameworks */,
 				CC7531372806C82B0085BCC1 /* FirebaseRemoteConfigSwift in Frameworks */,
 				CC7531332806C82B0085BCC1 /* FirebaseAnalytics in Frameworks */,
 				138263AB3FEB03F168F242C8 /* Pods_Forabet_Challenge.framework in Frameworks */,
@@ -323,6 +325,7 @@
 				CC7531322806C82B0085BCC1 /* FirebaseAnalytics */,
 				CC7531342806C82B0085BCC1 /* FirebaseRemoteConfig */,
 				CC7531362806C82B0085BCC1 /* FirebaseRemoteConfigSwift */,
+				CC7531392806D9400085BCC1 /* AppsFlyerLib */,
 			);
 			productName = "Forabet Challenge";
 			productReference = CCD0ED5F27F447C400E57F21 /* Forabet Challenge.app */;
@@ -354,6 +357,7 @@
 			mainGroup = CCD0ED5627F447C400E57F21;
 			packageReferences = (
 				CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				CC7531382806D9400085BCC1 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */,
 			);
 			productRefGroup = CCD0ED6027F447C400E57F21 /* Products */;
 			projectDirPath = "";
@@ -684,6 +688,14 @@
 				kind = branch;
 			};
 		};
+		CC7531382806D9400085BCC1 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppsFlyerSDK/AppsFlyerFramework";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -701,6 +713,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CC7531312806C82B0085BCC1 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseRemoteConfigSwift;
+		};
+		CC7531392806D9400085BCC1 /* AppsFlyerLib */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CC7531382806D9400085BCC1 /* XCRemoteSwiftPackageReference "AppsFlyerFramework" */;
+			productName = AppsFlyerLib;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
