@@ -8,13 +8,14 @@
 import UIKit
 import Firebase
 import AppsFlyerLib
+import OneSignal
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         
-        initialionSDKs()
+        initialionSDKs(launchOptions)
         return true
     }
 
@@ -30,12 +31,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 // MARK: - Initialzation SDKs
 extension AppDelegate {
-    private func initialionSDKs() {
+    private func initialionSDKs(_ launchOptions: [UIApplication.LaunchOptionsKey: Any]?) {
         
         FirebaseApp.configure()
         
         AppsFlyerLib.shared().appsFlyerDevKey = DataManager.ProjectConstant.appsFlyerKey.rawValue
         AppsFlyerLib.shared().appleAppID = DataManager.ProjectConstant.appId.rawValue
+        
+        
+        OneSignal.initWithLaunchOptions(launchOptions)
+        OneSignal.setAppId(DataManager.ProjectConstant.oneSignaKey.rawValue)
+        
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
     }
 }
 
