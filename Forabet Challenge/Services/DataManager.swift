@@ -21,8 +21,16 @@ struct DataManager {
         return [minuts, seconds]
     }
     
-    enum WorkPath: String {
+    enum ProjectConstant: String {
         case policy = "https://forabet-challenge.web.app/policy"
         case terms = "https://forabet-challenge.web.app/terms"
+        case appsFlyerKey = "cBFVhV5kVKBDugtRQbUzM7"
+        case appId = "1618822767"
+        case keyCheck = "check"
+        case keyHost = "host"
+        case keyPath = "path"
+        case keyStatus = "status"
+        case keyStatusButton = "statusButton"
+        case oneSignaKey = ""
     }
 }
