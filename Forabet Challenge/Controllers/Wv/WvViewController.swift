@@ -19,7 +19,6 @@ class WvViewController: UIViewController, WKNavigationDelegate {
     @IBOutlet weak var webV: WKWebView!
     @IBOutlet weak var toolbar: UIToolbar! {
         didSet {
-            
             toolbar.isHidden = true
         }
     }
@@ -35,8 +34,6 @@ class WvViewController: UIViewController, WKNavigationDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupWv()
-        
-        
     }
     
     // MARK: - IB Action
@@ -49,7 +46,6 @@ class WvViewController: UIViewController, WKNavigationDelegate {
     @IBAction func refrechTapped(_ sender: UIBarButtonItem) {
         webV.reload()
     }
-    
 }
 
 // MARK: - Private Methodes
