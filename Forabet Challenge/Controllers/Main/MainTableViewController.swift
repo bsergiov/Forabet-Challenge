@@ -91,7 +91,7 @@ extension MainTableViewController {
         tableView.separatorStyle = .none
     }
 }
-
+// MARK: - Main delegate
 extension MainTableViewController: MainDelegate {
    
     func newGame() {
