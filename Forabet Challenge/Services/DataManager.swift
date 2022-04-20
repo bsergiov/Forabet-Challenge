@@ -5,7 +5,6 @@
 //  Created by SV on 04.04.2022.
 //
 
-import Foundation
 
 struct DataManager {
     // for data picker
